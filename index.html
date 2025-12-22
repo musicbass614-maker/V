@@ -1,393 +1,1103 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="tr">
+<head>
     <meta charset="UTF-8">
-    <title>Seni Seviyorum Aminemm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-
-  </head>
-    
-  <body>
-  <html lang="tr" oncontextmenu="return false" onselectstart="return true" ondragstart="return false">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="theme-color" content="#330c70" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id='SevgiliSiteBaşlığı'>❤️</title>
-    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Love_Heart_symbol.svg/394px-Love_Heart_symbol.svg.png" type="image/x-icon">
-
+    <title>ZahirTV - VIP </title>
     <style>
-      ::-moz-selection {
-        background: #212129;
-      }
-
-      ::selection {
-        background: #212129;
-      }
-
-      * {
-        cursor: url("http://ani.cursors-4u.net/nature/nat-11/nat1047.cur"), auto !important;
-      }
-
-      body {
-        cursor: url("http://ani.cursors-4u.net/nature/nat-11/nat1047.cur"), auto !important;
-        // background: #8300ff;
-        background: rgb(103,3,93);
-background: linear-gradient(90deg, rgba(103,3,93,1) 0%, rgba(2,0,36,1) 51%, rgba(69,44,99,1) 100%);
-        height: 100%;
-      }
-
-      body:hover {
-        cursor: url("http://ani.cursors-4u.net/nature/nat-11/nat1047.cur"), auto !important;
-      }
-
-      #kalp {
-        cursor: url("http://ani.cursors-4u.net/symbols/sym-8/sym755.png"), auto !important;
-        position: relative;
-        width: 120px;
-        height: 90px;
-        margin: 175px auto;
-        -webkit-animation: pulse 1.5s ease-out;
-        animation: pulse 1.5s ease-out;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-      }
-
-      #kalp:before,
-      #kalp:after {
-        position: absolute;
-        content: "";
-        left: 60px;
-        top: 0;
-        border-top: 10px #CF2E3B solid;
-        width: 60px;
-        height: 80px;
-        background: #CF2E3B;
-        border-radius: 50px 50px 0 0;
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-transform-origin: 0 100%;
-        transform-origin: 0 100%;
-      }
-
-      #kalp:after {
-        left: 0;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
-        box-shadow: 2px 0px 1px #902029;
-      }
-
-      #kalp:before {
-        box-shadow: 2px 2px 1px #3d0e11;
-        border-top: 10px #de6b75 solid;
-      }
-
-      @-webkit-keyframes pulse {
-        0% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        25% {
-          -webkit-transform: scale(1.8);
-          transform: scale(1.8);
+        
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
         }
-        50% {
-          -webkit-transform: scale(2.1);
-          transform: scale(2.1);
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        75% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 20px 0;
+            border-bottom: 2px solid #3b82f6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        100% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-      }
-
-      @keyframes pulse {
-        0% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        25% {
-          -webkit-transform: scale(1.8);
-          transform: scale(1.8);
+        
+        .logo h1 {
+            color: #3b82f6;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
-        50% {
-          -webkit-transform: scale(2.1);
-          transform: scale(2.1);
+        
+        .logo span {
+            color: #f59e0b;
         }
-        75% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
-        100% {
-          -webkit-transform: scale(2);
-          transform: scale(2);
+        
+        .jeton-display {
+            background-color: #1e293b;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #fbbf24;
+            border: 1px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-      }
-
-      .seniseviyom {
-        font-family: monospace;
-        font-size: 54px;
-        color: #fff;
-        margin-top: -100px;
-        text-align: center;
-        font-size: 6.5em;
-        color: #fff;
-        letter-spacing: 2px;
-        font-weight: 700;
-        text-transform: uppercase;
-        -webkit-animation: blur 1.25s ease-out infinite;
-        animation: blur 1.25s ease-out infinite;
-        text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
-      }
-
-      @-webkit-keyframes blur {
-        from {
-          text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff, 0px 10px 100px #7B96B8, 0px -10px 100px #7B96B8;
+        
+        .jeton-icon {
+            color: #fbbf24;
         }
-      }
-
-      @keyframes blur {
-        from {
-          text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff, 0px 10px 100px #7B96B8, 0px -10px 100px #7B96B8;
+        
+        .logout-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-      }
-
-      @media screen and (max-width: 630px) {
-        .seniseviyom {
-          font-size: 5em;
+        
+        .logout-btn:hover {
+            background-color: #2563eb;
         }
-      }
-
-      @media screen and (max-width: 530px) {
-        .seniseviyom {
-          font-size: 4em;
+        
+        /* Ana içerik alanı */
+        .content {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
         }
-      }
-
-      @media screen and (max-width: 410px) {
-        .seniseviyom {
-          font-size: 3em;
+        
+        /* Yan panel */
+        .sidebar {
+            width: 250px;
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 20px;
+            height: fit-content;
         }
-      }
-
-      @media screen and (max-width: 340px) {
-        .seniseviyom {
-          font-size: 2.5em;
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-      }
-
+        
+        .nav-menu li {
+            padding: 12px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu li:hover {
+            background-color: #334155;
+        }
+        
+        .nav-menu li.active {
+            background-color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Ana panel */
+        .main-panel {
+            flex: 1;
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .section-title {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        
+        /* Giriş/Kayıt formları */
+        .auth-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #334155;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #475569;
+            background-color: #1e293b;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .auth-btn:hover {
+            background-color: #2563eb;
+        }
+        
+        .switch-auth {
+            text-align: center;
+            margin-top: 20px;
+            color: #cbd5e1;
+        }
+        
+        .switch-auth a {
+            color: #3b82f6;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Film grid */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        
+        .movie-card {
+            background-color: #334155;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .movie-poster {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .movie-info {
+            padding: 15px;
+        }
+        
+        .movie-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f8fafc;
+        }
+        
+        .movie-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price-tag {
+            background-color: #3b82f6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .watch-btn {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .watch-btn:hover {
+            background-color: #059669;
+        }
+        
+        .watch-btn:disabled {
+            background-color: #64748b;
+            cursor: not-allowed;
+        }
+        
+        /* Reklam modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .modal-title {
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .ad-container {
+            background-color: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #3b82f6;
+        }
+        
+        .ad-text {
+            font-size: 32px;
+            color: #f59e0b;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+            margin: 20px 0;
+        }
+        
+        .countdown {
+            font-size: 48px;
+            color: #10b981;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .reward-info {
+            background-color: #334155;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Arama */
+        .search-container {
+            margin-bottom: 30px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #3b82f6;
+            background-color: #0f172a;
+            color: white;
+            font-size: 16px;
+        }
+        
+        /* Bonus bildirim */
+        .bonus-notification {
+            background-color: #10b981;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bonus-notification button {
+            background-color: #0f172a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Tarih gösterici */
+        .date-display {
+            text-align: center;
+            margin-top: 20px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #334155;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .tab.active {
+            background-color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
     </style>
-    <!--Kar efekti 1 mobilde kasıyor diye kaldırdım 
-    <script src="https://cdn.elinsoft.com/kar.js" type="text/javascript"></script> -->
-    <div id="karAlani">
-      <style>
-        #karAlani {
-	position: absolute;
-	width: 100%;
-	min-height: 100%;
-	/*background-color: #171723; */
-	overflow: hidden;
-	z-index: -1;
-}
-
-.fa-snowflake-o {
-	color: #fff;
-	position: absolute;
-	top: -20px;
-	animation: yagis linear forwards;
-}
-
-@keyframes yagis {
-	to {
-		transform: translateY(105vh);
-	}
-} 
-      </style>
-      <script>
-        /*Font Awesome v4.7 kullanıldı*/
-
-function karTanesi() {
-	// <i> elemanı oluştur
-	var karTanesi = document.createElement('i');
-	// id den elementi çağırıp zemin değişkenine at
-	var zemin = document.getElementById("karAlani");
-	// tag adından body çağırıp body değişkenine at
-	var body = document.getElementsByTagName("BODY")[0];
-	// bodyYukseklik değişkenine body yüksekliğini ata
-	var bodyYukseklik = body.clientHeight;
-	// zemine atadığımız elementin yüksekliğini body ile aynı yap
-	zemin.style.height = bodyYukseklik + "px";
-	// FontAwesome ikonu görünmesi için gerekli class'ları ekle
-	karTanesi.classList.add('fa','fa-snowflake-o');
-	// Kar tanelerine 0' dan ekran genişliğine kadar rastgele sol boşluk ver
-	karTanesi.style.left = Math.random() * body.clientWidth + 'px';
-	// 0 ile 1 arasında rastgele opacity değeri oluştur bu sayede solgun kar taneleri oluşsun
-	karTanesi.style.opacity = Math.random();
-	// 2 ile 5 arasında rastgele animationDuration süresi oluştur
-	karTanesi.style.animationDuration = Math.random() * 3 + 2 + 's';
-	// zemin değişkeni içine oluşturulan i etiketini yerleştir
-	zemin.appendChild(karTanesi);
-	// Sürekli olarak bir element oluşturmak bir süre sonra tarayıcıyı yoracaktır
-	// bu yüzden oluşan kar tanesini 7 saniye sonra tamamen kaldır
-	setTimeout(() => { karTanesi.remove(); }, 7000);
-}
-// her 80ms geçtiğinde karTanesi oluşturan fonksiyonu çalıştır
-setInterval(karTanesi, 80); 
-      </script>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" type="text/javascript"></script>
-
-    <script>
-      let sekmedeYazanlar = ['SENI SEVIYORUM', 'S', 'SE', 'SEN', 'SENI', 'SENI S', 'SENI SE', 'SENI SEV', 'SENI SEVI', 'SENI SEVIY', 'SENI SEVIYO', 'SENI SEVIYOR', 'SENI SEVIYORU', 'SENI SEVIYORUM', 'SENI SEVIYORUM', '❤️💜💙💚💛', 'SENI', 'SEVIYORUM', '❤️💜💙💚💛'];
-      let step = -1;
-
-      function sevgiliSekmeyiBaşlat() {
-        step = step == (sekmedeYazanlar.length - 1) ? 0 : step + 1;
-        SevgiliSiteBaşlığı.textContent = sekmedeYazanlar[step];
-      }
-
-      window.onload = function() {
-        window.setInterval(sevgiliSekmeyiBaşlat, 1000);
-      }
-
-    </script>
-  </head>
-
-  <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Zahir<span>TV</span></h1>
+            </div>
+            <div class="user-info" id="user-info" style="display: none;">
+                <div class="jeton-display">
+                    <span class="jeton-icon">🪙</span>
+                    <span id="jeton-count">90</span> Jeton
+                </div>
+                <button class="logout-btn" id="logout-btn">Çıkış Yap</button>
+            </div>
+        </div>
+    </header>
     
-  <!-- Şarkı ekliyoruz -->
-    <iframe width="1" height="1" src="https://www.youtube.com/embed/kGCj10E0adY?rel=0&autoplay=1" frameborder="0" allowfullscreen>            </iframe>
-
-    <div id="kalp"></div>
-    <div class="seniseviyom">Seni Seviyorum aminem</div>
-    <div class="SevgiDiv">
-       <div id="SevgiMetini">Gözlerimden dökülen sevgiyi anlamak ister misin?</div>
-</div>
-
-<script>
-  const SevgiSozleri = [
-  "Seni Seviyorum",
-  "Aşkımız sonsuz",
-  "Kalbim seninle atıyor",
-  "Gönlümde hep sen varısın",
-  "Birlikte geçirdiğimiz zaman çok değerli",
-  "Gözlerin beni büyülüyor",
-  "Sensiz geçen anlar eksik",
-  "Her anında seni düşünüyorum",
-  "Gülüşün dünyamı aydınlatıyor",
-  "Birlikte olduğumuzda zaman duruyor",
-  "Seninle geçirdiğim her an özel",
-  "Hayatımın anlamı sensin",
-  "Aşkın rengi seninle belli oluyor",
-  "Seninle geçirdiğim her gün bir ömre bedel",
-  "Kalbim senin adınla çarpıyor",
-  "Seninle olmak bir ayrıcalık",
-  "Sana her gün biraz daha aşığım",
-  "Gönlümde sadece senin için yer var",
-  "Aşkınla dolup taşıyorum",
-  "Seninle her anım özel",
-  "Gözlerinle bana hayat veriyorsun",
-  "Aşkınla içimi ısıtıyorsun",
-  "Seninle her an yeni bir başlangıç",
-  "Sensiz bir gün geçmesin istiyorum",
-  "Aşkınla hayat renk buluyor",
-  "Gönlümün tek sahibi sensin",
-  "Seninle geçen her an bir hazine",
-  "Sana olan sevgim dilden kalbe değil, kalpten dilden konuşuyor",
-  "Sensiz bir an bile düşünemiyorum",
-  "Gökyüzündeki yıldızlar kadar parlak aşkımız",
-  "Hayatın anlamı seninle buldu",
-  "Seninle olmak, hayatı dolu dolu yaşamak demek",
-  "Kalbim seninle çiçek açıyor",
-  "Sana sarıldığımda tüm dünya kayboluyor",
-  "Sensiz geçen anlar, kaybolmuş zaman gibi",
-  "Gönlümde senin için özel bir köşe var",
-  "Seninle geçen her an bir ömre bedel",
-  "Gözlerinle beni büyülüyorsun",
-  "Aşkınla her gün yeniden doğuyorum",
-  "Sensiz geçen her an, bir kayıp",
-  "Gözlerinle beni büyülüyorsun",
-  "Sensiz bir gün, gri bir dünya",
-  "Seninle olmak, hayatın en güzel anı",
-  "Sana olan sevgim, kelimelerle ifade edilemez",
-  "Gülüşün, dünyamı aydınlatıyor",
-  "Aşkınla her an coşuyorum",
-  "Seninle geçirdiğim her dakika, bir ömre bedel",
-  "Sensiz geçen her an, kaybolmuş bir zaman dilimi",
-  "Sensiz bir hayat, yaşanmış bir hayat değil",
-  "Seninle geçen her an, bir masal gibi",
-  "Gönlümde sadece senin için yer var",
-  "Sana olan sevgim, sonsuz gibi",
-  "Sensiz geçen anlar, eksik bir puzzle parçası gibi",
-  "Gözlerin, kalbimin dilini konuşuyor",
-  "Seninle olmak, hayatın gerçek anlamı",
-  "Sensiz bir dünya, renksiz bir resim gibi",
-    // İstediğiniz kadar söz ekleyebilirsiniz
-  ];
-
-  const SevgiMetinElemani = document.getElementById("SevgiMetini");
-
-  function mesajiDegistir() {
-    const rastgeleHesapla = Math.floor(Math.random() * SevgiSozleri.length);
-    const rastgeleMesaj = SevgiSozleri[rastgeleHesapla];
-    SevgiMetinElemani.innerText = rastgeleMesaj;
-  }
-
-  setInterval(mesajiDegistir, 5000); // 5000 milisaniye = 5 saniye
-</script>
-    <!--<marquee style="WIDTH: 132; HEIGHT: 100px" scrollAmount="2" scrollDelay="10" direction="up" left="5" top="0">
-      <p class="SEVGISOZLERI" align="center">
-        Bu site Zahir tarafından kodlanmıştır.<br>
-        <br> 
-        <br>
-        <br>
-        <br> ❤️💜💙💚💛
-        <br>
-        <br>
-        <br> Seni Seviyorum aminemm<br><br>
-        <br> ❤️💜💙💚💛
-        <br>
-        <br>
-        <br> Hem de çoook aminemm :)
-        <br>
-        <br>
-        <br> ❤️💜💙💚💛
-      </p>
-    </marquee>
--->
-    <style>
-      .SEVGISOZLERI {
-        color: #fff;
-        text-align: center;
-        position: relative;
-        margin: auto;
-      }
-      .SevgiDiv{
-        position: relative;
-        margin: auto;
-        text-align: center;
-      }
-      #SevgiMetini{
-        color: #fff;
-        text-align: center;
-        position: relative;
-        margin: auto;
-      }
-
-    </style>
+    <div class="container">
+        <div class="content">
+            <!-- Yan panel (sadece giriş yapıldıysa görünür) -->
+            <div class="sidebar" id="sidebar" style="display: none;">
+                <ul class="nav-menu">
+                    <li class="active" data-section="movies">Filmler</li>
+                    <li data-section="watched">İzlediklerim</li>
+                    <li data-section="search">Film Ara</li>
+                    <li data-section="ad-watch">Reklam İzle (Jeton Kazan)</li>
+                    <li data-section="account">Hesabım</li>
+                </ul>
+                
+                <div class="date-display" id="date-display"></div>
+            </div>
+            
+            <!-- Ana panel -->
+            <div class="main-panel" id="main-panel">
+                <!-- Giriş/Kayıt bölümü (ilk görünen) -->
+                <div id="auth-section">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="login">Giriş Yap</div>
+                        <div class="tab" data-tab="register">Kayıt Ol</div>
+                    </div>
+                    
+                    <div id="login-form" class="auth-form">
+                        <h2 class="section-title">ZahirTV'ye Giriş Yap</h2>
+                        <div class="form-group">
+                            <label for="login-username">Kullanıcı Adı</label>
+                            <input type="text" id="login-username" placeholder="Kullanıcı adınızı girin">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Şifre</label>
+                            <input type="password" id="login-password" placeholder="Şifrenizi girin">
+                        </div>
+                        <button class="auth-btn" id="login-btn">Giriş Yap</button>
+                        <div class="switch-auth">
+                            Hesabınız yok mu? <a id="switch-to-register">Kayıt Olun</a>
+                        </div>
+                    </div>
+                    
+                    <div id="register-form" class="auth-form" style="display: none;">
+                        <h2 class="section-title">ZahirTV'ye Kayıt Ol</h2>
+                        <div class="form-group">
+                            <label for="register-username">Kullanıcı Adı</label>
+                            <input type="text" id="register-username" placeholder="Kullanıcı adı seçin">
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Şifre</label>
+                            <input type="password" id="register-password" placeholder="Şifre seçin">
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password-again">Şifre Tekrar</label>
+                            <input type="password" id="register-password-again" placeholder="Şifreyi tekrar girin">
+                        </div>
+                        <button class="auth-btn" id="register-btn">Kayıt Ol</button>
+                        <div class="switch-auth">
+                            Zaten hesabınız var mı? <a id="switch-to-login">Giriş Yapın</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filmler bölümü (giriş yapılınca görünür) -->
+                <div id="movies-section" style="display: none;">
+                    <h2 class="section-title">VIP Filmler</h2>
+                    
+                    <div id="bonus-notification" class="bonus-notification" style="display: none;">
+                        <div>
+                            <strong>Günlük Giriş Bonusu!</strong> Bugün giriş yaptığınız için 30 jeton kazandınız.
+                        </div>
+                        <button id="close-bonus">Kapat</button>
+                    </div>
+                    
+                    <div class="movies-grid" id="movies-grid">
+                        <!-- Filmler JavaScript ile eklenecek -->
+                    </div>
+                </div>
+                
+                <!-- İzlediklerim bölümü -->
+                <div id="watched-section" style="display: none;">
+                    <h2 class="section-title">İzlediğim Filmler</h2>
+                    <div class="movies-grid" id="watched-grid">
+                        <!-- İzlenen filmler buraya eklenecek -->
+                    </div>
+                </div>
+                
+                <!-- Film arama bölümü -->
+                <div id="search-section" style="display: none;">
+                    <h2 class="section-title">Film Ara</h2>
+                    <div class="search-container">
+                        <input type="text" class="search-box" id="search-input" placeholder="Film adı, tür veya yönetmen ara...">
+                    </div>
+                    <div class="movies-grid" id="search-results">
+                        <!-- Arama sonuçları buraya eklenecek -->
+                    </div>
+                </div>
+                
+                <!-- Reklam izleme bölümü -->
+                <div id="ad-watch-section" style="display: none;">
+                    <h2 class="section-title">Reklam İzle ve Jeton Kazan</h2>
+                    <div class="reward-info">
+                        <p>Reklam izleyerek günde 1 kez 30 jeton kazanabilirsiniz.</p>
+                        <p>Son reklam izleme: <span id="last-ad-watch">Hiç izlemediniz</span></p>
+                        <p>Bugün reklam izleyip izleyemeyeceğiniz: <span id="ad-availability" style="color:#10b981; font-weight:bold;">Evet, izleyebilirsiniz</span></p>
+                    </div>
+                    
+                    <button class="auth-btn" id="watch-ad-btn" style="margin-top: 20px;">Reklam İzle (30 Jeton Kazan)</button>
+                </div>
+                
+                <!-- Hesap bölümü -->
+                <div id="account-section" style="display: none;">
+                    <h2 class="section-title">Hesap Bilgilerim</h2>
+                    <div class="auth-form">
+                        <div class="form-group">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" id="account-username" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Toplam Jeton</label>
+                            <input type="text" id="account-total-jets" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Kayıt Tarihi</label>
+                            <input type="text" id="account-reg-date" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Toplam İzlenen Film</label>
+                            <input type="text" id="account-total-watched" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
-
-</html>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
-  </body>
-  
+    
+    <!-- Reklam modalı -->
+    <div class="modal-overlay" id="ad-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Reklam İzliyorsunuz</h2>
+            <div class="ad-container">
+                <div class="ad-text">Zahir TV - En İyi TV!</div>
+                <div class="countdown" id="countdown">5</div>
+                <p>Reklam bitince 30 jeton kazanacaksınız...</p>
+            </div>
+            <div class="reward-info">
+                <p>Reklamı tam izleyerek <strong>30 jeton</strong> kazanacaksınız.</p>
+                <p>Lütfen bekleyin, reklam otomatik kapanacaktır.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Uygulama durumu
+        const state = {
+            currentUser: null,
+            users: JSON.parse(localStorage.getItem('zahirTVUsers')) || [],
+            movies: [
+                { id: 1, title: "Vizontele", genre: "Komedi", year: 2000, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 2, title: "Kurtlar Vadisi Irak", genre: "Aksiyon", year: 2006, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 3, title: "Recep İvedik", genre: "Komedi", year: 2008, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 4, title: "Düğün Dernek", genre: "Komedi", year: 2013, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 5, title: "A.R.O.G", genre: "Komedi", year: 2008, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 6, title: "G.O.R.A", genre: "Bilim Kurgu", year: 2004, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 7, title: "Eşkiya", genre: "Dram", year: 1996, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
+                { id: 8, title: "Hababam Sınıfı", genre: "Komedi", year: 1975, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" }
+            ],
+            watchedMovies: JSON.parse(localStorage.getItem('watchedMovies')) || [],
+            dailyBonusClaimed: JSON.parse(localStorage.getItem('dailyBonusClaimed')) || false,
+            lastAdWatch: localStorage.getItem('lastAdWatch') || null
+        };
+        
+        // DOM elementleri
+        const authSection = document.getElementById('auth-section');
+        const moviesSection = document.getElementById('movies-section');
+        const watchedSection = document.getElementById('watched-section');
+        const searchSection = document.getElementById('search-section');
+        const adWatchSection = document.getElementById('ad-watch-section');
+        const accountSection = document.getElementById('account-section');
+        const sidebar = document.getElementById('sidebar');
+        const userInfo = document.getElementById('user-info');
+        const jetonCount = document.getElementById('jeton-count');
+        const moviesGrid = document.getElementById('movies-grid');
+        const watchedGrid = document.getElementById('watched-grid');
+        const searchResults = document.getElementById('search-results');
+        const searchInput = document.getElementById('search-input');
+        const bonusNotification = document.getElementById('bonus-notification');
+        const adModal = document.getElementById('ad-modal');
+        const countdownElement = document.getElementById('countdown');
+        const dateDisplay = document.getElementById('date-display');
+        const lastAdWatchElement = document.getElementById('last-ad-watch');
+        const adAvailabilityElement = document.getElementById('ad-availability');
+        
+        // Tarih gösterici
+        function updateDateDisplay() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateDisplay.textContent = now.toLocaleDateString('tr-TR', options);
+        }
+        
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateDisplay();
+            
+            // Kullanıcı girişi kontrol et
+            const loggedInUser = localStorage.getItem('currentUser');
+            if (loggedInUser) {
+                loginUser(JSON.parse(loggedInUser));
+            }
+            
+            // Filmleri yükle
+            renderMovies();
+            
+            // Reklam izleme durumunu güncelle
+            updateAdWatchStatus();
+        });
+        
+        // Tab geçişleri
+        document.querySelectorAll('[data-tab]').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Tüm tabları deaktif et
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                // Tüm formları gizle
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('register-form').style.display = 'none';
+                
+                // Seçilen tabı aktif et
+                this.classList.add('active');
+                
+                // Seçilen formu göster
+                document.getElementById(`${tabId}-form`).style.display = 'block';
+            });
+        });
+        
+        // Giriş formu switch
+        document.getElementById('switch-to-register').addEventListener('click', function() {
+            document.querySelector('[data-tab="register"]').click();
+        });
+        
+        document.getElementById('switch-to-login').addEventListener('click', function() {
+            document.querySelector('[data-tab="login"]').click();
+        });
+        
+        // Giriş yap butonu
+        document.getElementById('login-btn').addEventListener('click', function() {
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            
+            if (!username || !password) {
+                alert('Lütfen kullanıcı adı ve şifre girin!');
+                return;
+            }
+            
+            const user = state.users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                loginUser(user);
+            } else {
+                alert('Kullanıcı adı veya şifre hatalı!');
+            }
+        });
+        
+        // Kayıt ol butonu
+        document.getElementById('register-btn').addEventListener('click', function() {
+            const username = document.getElementById('register-username').value.trim();
+            const password = document.getElementById('register-password').value.trim();
+            const passwordAgain = document.getElementById('register-password-again').value.trim();
+            
+            if (!username || !password || !passwordAgain) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+            
+            if (password !== passwordAgain) {
+                alert('Şifreler eşleşmiyor!');
+                return;
+            }
+            
+            if (state.users.find(u => u.username === username)) {
+                alert('Bu kullanıcı adı zaten alınmış!');
+                return;
+            }
+            
+            const newUser = {
+                username,
+                password,
+                jets: 90,
+                regDate: new Date().toLocaleDateString('tr-TR'),
+                watchedMovies: []
+            };
+            
+            state.users.push(newUser);
+            localStorage.setItem('zahirTVUsers', JSON.stringify(state.users));
+            
+            alert('Kayıt başarılı! Giriş yapabilirsiniz.');
+            document.querySelector('[data-tab="login"]').click();
+            document.getElementById('login-username').value = username;
+            document.getElementById('login-password').value = '';
+        });
+        
+        // Kullanıcı giriş işlemi
+        function loginUser(user) {
+            state.currentUser = user;
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            
+            // Giriş ekranını gizle, diğer bölümleri göster
+            authSection.style.display = 'none';
+            sidebar.style.display = 'block';
+            userInfo.style.display = 'flex';
+            
+            // Günlük bonus kontrolü
+            const today = new Date().toDateString();
+            const lastBonusDate = localStorage.getItem('lastBonusDate');
+            
+            if (lastBonusDate !== today) {
+                // Yeni gün, bonus ver
+                state.currentUser.jets += 30;
+                updateUserInStorage();
+                bonusNotification.style.display = 'flex';
+                localStorage.setItem('lastBonusDate', today);
+            }
+            
+            // Jeton sayısını güncelle
+            jetonCount.textContent = state.currentUser.jets;
+            
+            // Varsayılan olarak filmler bölümünü göster
+            showSection('movies');
+            
+            // Menü tıklama olayları
+            document.querySelectorAll('.nav-menu li').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Tüm menü öğelerinden active class'ını kaldır
+                    document.querySelectorAll('.nav-menu li').forEach(i => i.classList.remove('active'));
+                    // Tıklanan öğeye active class'ını ekle
+                    this.classList.add('active');
+                    
+                    // Bölümü göster
+                    const section = this.getAttribute('data-section');
+                    showSection(section);
+                });
+            });
+            
+            // Çıkış butonu
+            document.getElementById('logout-btn').addEventListener('click', logoutUser);
+            
+            // Bonus bildirimi kapatma
+            document.getElementById('close-bonus').addEventListener('click', function() {
+                bonusNotification.style.display = 'none';
+            });
+            
+            // Reklam izleme butonu
+            document.getElementById('watch-ad-btn').addEventListener('click', watchAd);
+            
+            // Arama kutusu
+            searchInput.addEventListener('input', searchMovies);
+        }
+        
+        // Bölüm gösterme
+        function showSection(section) {
+            // Tüm bölümleri gizle
+            moviesSection.style.display = 'none';
+            watchedSection.style.display = 'none';
+            searchSection.style.display = 'none';
+            adWatchSection.style.display = 'none';
+            accountSection.style.display = 'none';
+            
+            // İstenen bölümü göster
+            document.getElementById(`${section}-section`).style.display = 'block';
+            
+            // Bölüme özel içerikleri yükle
+            if (section === 'movies') {
+                renderMovies();
+            } else if (section === 'watched') {
+                renderWatchedMovies();
+            } else if (section === 'search') {
+                searchMovies();
+            } else if (section === 'ad-watch') {
+                updateAdWatchStatus();
+            } else if (section === 'account') {
+                renderAccountInfo();
+            }
+        }
+        
+        // Filmleri render et
+        function renderMovies() {
+            moviesGrid.innerHTML = '';
+            
+            state.movies.forEach(movie => {
+                const isWatched = state.currentUser.watchedMovies && 
+                    state.currentUser.watchedMovies.includes(movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                movieCard.innerHTML = `
+                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
+                    <div class="movie-info">
+                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-price">
+                            <div class="price-tag">${movie.price} Jeton</div>
+                            <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
+                                ${isWatched ? 'İzlendi' : (state.currentUser.jets < movie.price ? 'Yetersiz Jeton' : 'İzle')}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                moviesGrid.appendChild(movieCard);
+                
+                // İzle butonu olayı
+                if (!isWatched) {
+                    const watchBtn = movieCard.querySelector('.watch-btn');
+                    watchBtn.addEventListener('click', function() {
+                        watchMovie(movie.id);
+                    });
+                }
+            });
+        }
+        
+        // Film izleme
+        function watchMovie(movieId) {
+            const movie = state.movies.find(m => m.id === movieId);
+            
+            if (!movie) return;
+            
+            // Jeton kontrolü
+            if (state.currentUser.jets < movie.price) {
+                alert('Yetersiz jeton! Reklam izleyerek jeton kazanabilirsiniz.');
+                return;
+            }
+            
+            // Jetonları düş
+            state.currentUser.jets -= movie.price;
+            
+            // Filmi izlenenlere ekle
+            if (!state.currentUser.watchedMovies) {
+                state.currentUser.watchedMovies = [];
+            }
+            
+            if (!state.currentUser.watchedMovies.includes(movieId)) {
+                state.currentUser.watchedMovies.push(movieId);
+            }
+            
+            // Kullanıcıyı güncelle
+            updateUserInStorage();
+            
+            // Jeton sayısını güncelle
+            jetonCount.textContent = state.currentUser.jets;
+            
+            // Film listesini güncelle
+            renderMovies();
+            
+            alert(`"${movie.title}" filmi başarıyla izlendi! Kalan jeton: ${state.currentUser.jets}`);
+        }
+        
+        // İzlenen filmleri render et
+        function renderWatchedMovies() {
+            watchedGrid.innerHTML = '';
+            
+            if (!state.currentUser.watchedMovies || state.currentUser.watchedMovies.length === 0) {
+                watchedGrid.innerHTML = '<p style="color:#94a3b8; text-align:center; width:100%;">Henüz hiç film izlemediniz.</p>';
+                return;
+            }
+            
+            state.currentUser.watchedMovies.forEach(movieId => {
+                const movie = state.movies.find(m => m.id === movieId);
+                if (!movie) return;
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                movieCard.innerHTML = `
+                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
+                    <div class="movie-info">
+                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-price">
+                            <div style="color:#10b981; font-weight:bold;">✓ İzlendi</div>
+                        </div>
+                    </div>
+                `;
+                
+                watchedGrid.appendChild(movieCard);
+            });
+        }
+        
+        // Film ara
+        function searchMovies() {
+            const query = searchInput.value.toLowerCase();
+            searchResults.innerHTML = '';
+            
+            const filteredMovies = state.movies.filter(movie => 
+                movie.title.toLowerCase().includes(query) || 
+                movie.genre.toLowerCase().includes(query)
+            );
+            
+            if (filteredMovies.length === 0) {
+                searchResults.innerHTML = '<p style="color:#94a3b8; text-align:center; width:100%;">Aramanızla eşleşen film bulunamadı.</p>';
+                return;
+            }
+            
+            filteredMovies.forEach(movie => {
+                const isWatched = state.currentUser.watchedMovies && 
+                    state.currentUser.watchedMovies.includes(movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                movieCard.innerHTML = `
+                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
+                    <div class="movie-info">
+                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-price">
+                            <div class="price-tag">${movie.price} Jeton</div>
+                            <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
+                                ${isWatched ? 'İzlendi' : (state.currentUser.jets < movie.price ? 'Yetersiz Jeton' : 'İzle')}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                searchResults.appendChild(movieCard);
+                
+                // İzle butonu olayı
+                if (!isWatched) {
+                    const watchBtn = movieCard.querySelector('.watch-btn');
+                    watchBtn.addEventListener('click', function() {
+                        watchMovie(movie.id);
+                    });
+                }
+            });
+        }
+        
+        // Reklam izleme durumunu güncelle
+        function updateAdWatchStatus() {
+            if (state.lastAdWatch) {
+                const lastDate = new Date(state.lastAdWatch);
+                lastAdWatchElement.textContent = lastDate.toLocaleDateString('tr-TR') + ' ' + lastDate.toLocaleTimeString('tr-TR');
+                
+                // Bugün reklam izlenmiş mi kontrol et
+                const today = new Date();
+                const lastAdDate = new Date(state.lastAdWatch);
+                
+                if (lastAdDate.toDateString() === today.toDateString()) {
+                    adAvailabilityElement.textContent = "Hayır, bugün zaten reklam izlediniz";
+                    adAvailabilityElement.style.color = "#ef4444";
+                    document.getElementById('watch-ad-btn').disabled = true;
+                } else {
+                    adAvailabilityElement.textContent = "Evet, izleyebilirsiniz";
+                    adAvailabilityElement.style.color = "#10b981";
+                    document.getElementById('watch-ad-btn').disabled = false;
+                }
+            } else {
+                lastAdWatchElement.textContent = "Hiç izlemediniz";
+                adAvailabilityElement.textContent = "Evet, izleyebilirsiniz";
+                adAvailabilityElement.style.color = "#10b981";
+                document.getElementById('watch-ad-btn').disabled = false;
+            }
+        }
+        
+        // Reklam izle
+        function watchAd() {
+            // Bugün reklam izlenmiş mi kontrol et
+            const today = new Date();
+            if (state.lastAdWatch) {
+                const lastAdDate = new Date(state.lastAdWatch);
+                if (lastAdDate.toDateString() === today.toDateString()) {
+                    alert("Bugün zaten reklam izlediniz. Yarın tekrar deneyin!");
+                    return;
+                }
+            }
+            
+            // Reklam modalını göster
+            adModal.style.display = 'flex';
+            
+            // Geri sayım
+            let countdown = 5;
+            countdownElement.textContent = countdown;
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    
+                    // Reklamı kapat
+                    adModal.style.display = 'none';
+                    
+                    // Jeton ver
+                    state.currentUser.jets += 30;
+                    updateUserInStorage();
+                    jetonCount.textContent = state.currentUser.jets;
+                    
+                    // Reklam izleme tarihini kaydet
+                    state.lastAdWatch = new Date().toISOString();
+                    localStorage.setItem('lastAdWatch', state.lastAdWatch);
+                    
+                    // Reklam durumunu güncelle
+                    updateAdWatchStatus();
+                    
+                    alert("Reklam izleme tamamlandı! 30 jeton kazandınız.");
+                    
+                    // Film listesini güncelle (jetonlar değişti)
+                    renderMovies();
+                }
+            }, 1000);
+        }
+        
+        // Hesap bilgilerini göster
+        function renderAccountInfo() {
+            document.getElementById('account-username').value = state.currentUser.username;
+            document.getElementById('account-total-jets').value = state.currentUser.jets;
+            document.getElementById('account-reg-date').value = state.currentUser.regDate || "Bilinmiyor";
+            
+            const totalWatched = state.currentUser.watchedMovies ? state.currentUser.watchedMovies.length : 0;
+            document.getElementById('account-total-watched').value = totalWatched;
+        }
+        
+        // Kullanıcıyı localStorage'da güncelle
+        function updateUserInStorage() {
+            // Kullanıcıyı users dizisinde güncelle
+            const userIndex = state.users.findIndex(u => u.username === state.currentUser.username);
+            if (userIndex !== -1) {
+                state.users[userIndex] = state.currentUser;
+                localStorage.setItem('zahirTVUsers', JSON.stringify(state.users));
+            }
+            
+            // currentUser'ı güncelle
+            localStorage.setItem('currentUser', JSON.stringify(state.currentUser));
+        }
+        
+        // Çıkış yap
+        function logoutUser() {
+            state.currentUser = null;
+            localStorage.removeItem('currentUser');
+            
+            // Giriş ekranını göster
+            authSection.style.display = 'block';
+            sidebar.style.display = 'none';
+            userInfo.style.display = 'none';
+            
+            // Formları sıfırla
+            document.getElementById('login-username').value = '';
+            document.getElementById('login-password').value = '';
+            document.querySelector('[data-tab="login"]').click();
+            
+            // Bonus bildirimini gizle
+            bonusNotification.style.display = 'none';
+        }
+        
+        // Enter tuşu ile giriş
+        document.getElementById('login-password').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('login-btn').click();
+            }
+        });
+        
+        document.getElementById('register-password-again').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('register-btn').click();
+            }
+        });
+    </script>
+</body>
 </html>
