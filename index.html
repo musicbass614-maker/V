@@ -16,18 +16,19 @@
             background-color: #0f172a;
             color: #f8fafc;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
         
         /* Header */
         header {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 2px solid #3b82f6;
             position: sticky;
             top: 0;
@@ -38,18 +39,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .logo h1 {
             color: #3b82f6;
-            font-size: 32px;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            font-size: 24px;
+            text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
         }
         
         .logo span {
@@ -59,19 +61,21 @@
         .user-info {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         .jeton-display {
             background-color: #1e293b;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 15px;
             font-weight: bold;
             color: #fbbf24;
             border: 1px solid #3b82f6;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 14px;
         }
         
         .jeton-icon {
@@ -82,11 +86,12 @@
             background-color: #3b82f6;
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
         
         .logout-btn:hover {
@@ -96,16 +101,16 @@
         /* Ana içerik alanı */
         .content {
             display: flex;
-            gap: 30px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 20px;
         }
         
         /* Yan panel */
         .sidebar {
-            width: 250px;
+            width: 200px;
             background-color: #1e293b;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 15px;
             height: fit-content;
         }
         
@@ -113,14 +118,15 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         
         .nav-menu li {
-            padding: 12px 15px;
+            padding: 10px 12px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
         
         .nav-menu li:hover {
@@ -136,55 +142,56 @@
         .main-panel {
             flex: 1;
             background-color: #1e293b;
-            border-radius: 10px;
-            padding: 30px;
+            border-radius: 8px;
+            padding: 20px;
         }
         
         .section-title {
             color: #3b82f6;
             border-bottom: 2px solid #3b82f6;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            font-size: 24px;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 20px;
         }
         
         /* Giriş/Kayıt formları */
         .auth-form {
-            max-width: 400px;
+            max-width: 350px;
             margin: 0 auto;
             background-color: #334155;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 8px;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #cbd5e1;
+            font-size: 14px;
         }
         
         .form-group input {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border-radius: 5px;
             border: 1px solid #475569;
             background-color: #1e293b;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         .auth-btn {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             background-color: #3b82f6;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -197,8 +204,9 @@
         
         .switch-auth {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             color: #cbd5e1;
+            font-size: 14px;
         }
         
         .switch-auth a {
@@ -211,36 +219,39 @@
         /* Film grid */
         .movies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
         
         .movie-card {
             background-color: #334155;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .movie-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
         
         .movie-poster {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
         }
         
         .movie-info {
-            padding: 15px;
+            padding: 12px;
         }
         
         .movie-title {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #f8fafc;
+            font-size: 14px;
+            height: 40px;
+            overflow: hidden;
         }
         
         .movie-price {
@@ -252,20 +263,22 @@
         .price-tag {
             background-color: #3b82f6;
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 4px 8px;
+            border-radius: 4px;
             font-weight: bold;
+            font-size: 12px;
         }
         
         .watch-btn {
             background-color: #10b981;
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
+            font-size: 12px;
         }
         
         .watch-btn:hover {
@@ -277,14 +290,14 @@
             cursor: not-allowed;
         }
         
-        /* Reklam modal */
+        /* Reklam modal - ANİMASYONLU */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -293,77 +306,229 @@
         
         .modal-content {
             background-color: #1e293b;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
-            max-width: 500px;
+            max-width: 450px;
             width: 90%;
             text-align: center;
+            animation: modalFadeIn 0.5s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
         
         .modal-title {
             color: #3b82f6;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 15px;
+            font-size: 20px;
         }
         
         .ad-container {
             background-color: #0f172a;
             padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 15px 0;
             border: 2px solid #3b82f6;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
+        /* ANİMASYONLU REKLAM TEXT */
         .ad-text {
-            font-size: 32px;
+            font-size: 28px;
             color: #f59e0b;
             font-weight: bold;
             text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-            margin: 20px 0;
+            margin: 15px 0;
+            animation: pulse 1.5s infinite, colorChange 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes colorChange {
+            0% { color: #f59e0b; }
+            33% { color: #3b82f6; }
+            66% { color: #10b981; }
+            100% { color: #f59e0b; }
+        }
+        
+        /* REKLAM ANİMASYONU */
+        .ad-animation {
+            width: 100px;
+            height: 60px;
+            position: relative;
+            margin: 15px auto;
+        }
+        
+        .tv-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            animation: tvGlow 2s infinite alternate;
+        }
+        
+        @keyframes tvGlow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4); }
+        }
+        
+        .screen-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
         }
         
         .countdown {
-            font-size: 48px;
+            font-size: 36px;
             color: #10b981;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 15px 0;
+            animation: countdownPulse 1s infinite;
+        }
+        
+        @keyframes countdownPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .reward-info {
             background-color: #334155;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
         }
         
         /* Arama */
         .search-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .search-box {
             width: 100%;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 8px;
             border: 2px solid #3b82f6;
             background-color: #0f172a;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         /* Bonus bildirim */
         .bonus-notification {
             background-color: #10b981;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .bonus-notification button {
+            background-color: #0f172a;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        /* Tarih gösterici */
+        .date-display {
+            text-align: center;
+            margin-top: 15px;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
             margin-bottom: 20px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+        }
+        
+        .tab {
+            padding: 8px 15px;
+            background-color: #334155;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        
+        .tab.active {
+            background-color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Film oynatıcı modalı */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #0f172a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        
+        .video-header {
+            padding: 15px;
+            background-color: #1e293b;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .bonus-notification button {
-            background-color: #0f172a;
+        .video-title {
+            color: #3b82f6;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .close-video {
+            background-color: #ef4444;
             color: white;
             border: none;
             padding: 8px 15px;
@@ -372,34 +537,20 @@
             font-weight: bold;
         }
         
-        /* Tarih gösterici */
-        .date-display {
-            text-align: center;
-            margin-top: 20px;
-            color: #94a3b8;
-            font-size: 14px;
+        .video-player {
+            width: 100%;
+            height: 450px;
+            background-color: #000;
         }
         
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 10px;
+        .video-info {
+            padding: 15px;
+            background-color: #1e293b;
         }
         
-        .tab {
-            padding: 10px 20px;
-            background-color: #334155;
-            border-radius: 5px 5px 0 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .tab.active {
-            background-color: #3b82f6;
-            font-weight: bold;
+        .video-info p {
+            margin-bottom: 10px;
+            color: #cbd5e1;
         }
         
         /* Responsive */
@@ -413,12 +564,31 @@
             }
             
             .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
             }
             
             .header-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+            }
+            
+            .video-player {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .movie-poster {
+                height: 180px;
+            }
+            
+            .video-player {
+                height: 200px;
             }
         }
     </style>
@@ -544,7 +714,7 @@
                         <p>Bugün reklam izleyip izleyemeyeceğiniz: <span id="ad-availability" style="color:#10b981; font-weight:bold;">Evet, izleyebilirsiniz</span></p>
                     </div>
                     
-                    <button class="auth-btn" id="watch-ad-btn" style="margin-top: 20px;">Reklam İzle (30 Jeton Kazan)</button>
+                    <button class="auth-btn" id="watch-ad-btn" style="margin-top: 15px;">Reklam İzle (30 Jeton Kazan)</button>
                 </div>
                 
                 <!-- Hesap bölümü -->
@@ -573,12 +743,17 @@
         </div>
     </div>
     
-    <!-- Reklam modalı -->
+    <!-- Reklam modalı - ANİMASYONLU -->
     <div class="modal-overlay" id="ad-modal" style="display: none;">
         <div class="modal-content">
             <h2 class="modal-title">Reklam İzliyorsunuz</h2>
             <div class="ad-container">
-                <div class="ad-text">Zahir TV - En İyi TV!</div>
+                <div class="ad-animation">
+                    <div class="tv-screen">
+                        <div class="screen-content" id="screen-text">Zahir TV</div>
+                    </div>
+                </div>
+                <div class="ad-text" id="ad-text">En İyi TV!</div>
                 <div class="countdown" id="countdown">5</div>
                 <p>Reklam bitince 30 jeton kazanacaksınız...</p>
             </div>
@@ -589,20 +764,117 @@
         </div>
     </div>
     
+    <!-- Film oynatıcı modalı -->
+    <div class="video-modal" id="video-modal" style="display: none;">
+        <div class="video-container">
+            <div class="video-header">
+                <div class="video-title" id="video-title">Film İzleniyor</div>
+                <button class="close-video" id="close-video">Kapat</button>
+            </div>
+            <div class="video-player" id="video-player">
+                <iframe width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p id="video-description"></p>
+                <p id="video-duration"></p>
+            </div>
+        </div>
+    </div>
+    
     <script>
         // Uygulama durumu
         const state = {
             currentUser: null,
             users: JSON.parse(localStorage.getItem('zahirTVUsers')) || [],
             movies: [
-                { id: 1, title: "Vizontele", genre: "Komedi", year: 2000, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 2, title: "Kurtlar Vadisi Irak", genre: "Aksiyon", year: 2006, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 3, title: "Recep İvedik", genre: "Komedi", year: 2008, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 4, title: "Düğün Dernek", genre: "Komedi", year: 2013, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 5, title: "A.R.O.G", genre: "Komedi", year: 2008, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 6, title: "G.O.R.A", genre: "Bilim Kurgu", year: 2004, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 7, title: "Eşkiya", genre: "Dram", year: 1996, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
-                { id: 8, title: "Hababam Sınıfı", genre: "Komedi", year: 1975, price: 30, watched: false, poster: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" }
+                { 
+                    id: 1, 
+                    title: "Vizontele", 
+                    genre: "Komedi", 
+                    year: 2000, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "tHlpqXbSwws", // YouTube video ID
+                    description: "1974 yılında, Van'ın bir köyüne televizyon gelir. Köylüler ilk kez televizyonla tanışır ve hayatları değişir."
+                },
+                { 
+                    id: 2, 
+                    title: "Kurtlar Vadisi Irak", 
+                    genre: "Aksiyon", 
+                    year: 2006, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "6vY9UPiI4eQ",
+                    description: "Irak'ta görev yapan bir Türk timinin Amerikalılar tarafından rehin alınmasıyla başlayan olaylar."
+                },
+                { 
+                    id: 3, 
+                    title: "Recep İvedik", 
+                    genre: "Komedi", 
+                    year: 2008, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "Wg86eQkdudI",
+                    description: "Sıradan bir taksi şoförü olan Recep İvedik'in komik hayat hikayesi."
+                },
+                { 
+                    id: 4, 
+                    title: "Düğün Dernek", 
+                    genre: "Komedi", 
+                    year: 2013, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "mKZcT5vK4_c",
+                    description: "Almanya'da yaşayan iki Türk'ün köylerine dönüp düğün yapma çabaları."
+                },
+                { 
+                    id: 5, 
+                    title: "A.R.O.G", 
+                    genre: "Komedi", 
+                    year: 2008, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "p5AKvXh5NQ4",
+                    description: "G.O.R.A'nın devamı olan filmde Arif'in zamanda yolculuk maceraları."
+                },
+                { 
+                    id: 6, 
+                    title: "G.O.R.A", 
+                    genre: "Bilim Kurgu", 
+                    year: 2004, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "oLCfUCSMJo4",
+                    description: "Bir halı satıcısının uzaylılar tarafından kaçırılıp G.O.R.A gezegenine götürülmesi."
+                },
+                { 
+                    id: 7, 
+                    title: "Eşkiya", 
+                    genre: "Dram", 
+                    year: 1996, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "CjK8YjHqR3E",
+                    description: "35 yıl hapis yatan bir eşkıyanın İstanbul'a dönüşü ve intikam hikayesi."
+                },
+                { 
+                    id: 8, 
+                    title: "Hababam Sınıfı", 
+                    genre: "Komedi", 
+                    year: 1975, 
+                    price: 30, 
+                    watched: false, 
+                    poster: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    videoId: "z4wKjXl6eL4",
+                    description: "Özel Çamlıca Lisesi'nin yaramaz öğrencilerinden oluşan Hababam Sınıfı'nın eğlenceli maceraları."
+                }
             ],
             watchedMovies: JSON.parse(localStorage.getItem('watchedMovies')) || [],
             dailyBonusClaimed: JSON.parse(localStorage.getItem('dailyBonusClaimed')) || false,
@@ -629,6 +901,13 @@
         const dateDisplay = document.getElementById('date-display');
         const lastAdWatchElement = document.getElementById('last-ad-watch');
         const adAvailabilityElement = document.getElementById('ad-availability');
+        const videoModal = document.getElementById('video-modal');
+        const videoPlayer = document.getElementById('video-player').querySelector('iframe');
+        const videoTitle = document.getElementById('video-title');
+        const videoDescription = document.getElementById('video-description');
+        const closeVideoBtn = document.getElementById('close-video');
+        const screenText = document.getElementById('screen-text');
+        const adText = document.getElementById('ad-text');
         
         // Tarih gösterici
         function updateDateDisplay() {
@@ -652,6 +931,13 @@
             
             // Reklam izleme durumunu güncelle
             updateAdWatchStatus();
+            
+            // Video kapatma butonu
+            closeVideoBtn.addEventListener('click', function() {
+                videoModal.style.display = 'none';
+                // Videoyu durdur
+                videoPlayer.src = '';
+            });
         });
         
         // Tab geçişleri
@@ -835,7 +1121,7 @@
                 movieCard.innerHTML = `
                     <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
                     <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
                         <div class="movie-price">
                             <div class="price-tag">${movie.price} Jeton</div>
                             <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
@@ -848,7 +1134,7 @@
                 moviesGrid.appendChild(movieCard);
                 
                 // İzle butonu olayı
-                if (!isWatched) {
+                if (!isWatched && state.currentUser.jets >= movie.price) {
                     const watchBtn = movieCard.querySelector('.watch-btn');
                     watchBtn.addEventListener('click', function() {
                         watchMovie(movie.id);
@@ -868,6 +1154,10 @@
                 alert('Yetersiz jeton! Reklam izleyerek jeton kazanabilirsiniz.');
                 return;
             }
+            
+            // Kullanıcıyı onayla
+            const confirmWatch = confirm(`"${movie.title}" filmini izlemek için ${movie.price} jeton harcanacak. Onaylıyor musunuz?`);
+            if (!confirmWatch) return;
             
             // Jetonları düş
             state.currentUser.jets -= movie.price;
@@ -890,7 +1180,22 @@
             // Film listesini güncelle
             renderMovies();
             
-            alert(`"${movie.title}" filmi başarıyla izlendi! Kalan jeton: ${state.currentUser.jets}`);
+            // Filmi aç
+            playMovie(movie);
+        }
+        
+        // Film oynatma
+        function playMovie(movie) {
+            videoTitle.textContent = `${movie.title} (${movie.year})`;
+            videoDescription.textContent = movie.description;
+            
+            // YouTube video URL'si oluştur
+            videoPlayer.src = `https://www.youtube.com/embed/${movie.videoId}?autoplay=1&rel=0`;
+            
+            // Video modalını göster
+            videoModal.style.display = 'flex';
+            
+            alert(`"${movie.title}" filmi başarıyla izleniyor! Kalan jeton: ${state.currentUser.jets}`);
         }
         
         // İzlenen filmleri render et
@@ -911,14 +1216,23 @@
                 movieCard.innerHTML = `
                     <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
                     <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
                         <div class="movie-price">
-                            <div style="color:#10b981; font-weight:bold;">✓ İzlendi</div>
+                            <div style="color:#10b981; font-weight:bold; font-size:12px;">✓ İzlendi</div>
+                            <button class="watch-btn" style="background-color:#3b82f6;" data-id="${movie.id}">
+                                Tekrar İzle
+                            </button>
                         </div>
                     </div>
                 `;
                 
                 watchedGrid.appendChild(movieCard);
+                
+                // Tekrar izle butonu
+                const rewatchBtn = movieCard.querySelector('.watch-btn');
+                rewatchBtn.addEventListener('click', function() {
+                    playMovie(movie);
+                });
             });
         }
         
@@ -946,7 +1260,7 @@
                 movieCard.innerHTML = `
                     <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
                     <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})</div>
+                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
                         <div class="movie-price">
                             <div class="price-tag">${movie.price} Jeton</div>
                             <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
@@ -959,7 +1273,7 @@
                 searchResults.appendChild(movieCard);
                 
                 // İzle butonu olayı
-                if (!isWatched) {
+                if (!isWatched && state.currentUser.jets >= movie.price) {
                     const watchBtn = movieCard.querySelector('.watch-btn');
                     watchBtn.addEventListener('click', function() {
                         watchMovie(movie.id);
@@ -995,7 +1309,7 @@
             }
         }
         
-        // Reklam izle
+        // Reklam izle - ANİMASYONLU
         function watchAd() {
             // Bugün reklam izlenmiş mi kontrol et
             const today = new Date();
@@ -1010,6 +1324,17 @@
             // Reklam modalını göster
             adModal.style.display = 'flex';
             
+            // Reklam animasyonu için metin değişimi
+            const adTexts = ["Zahir TV", "En Kaliteli", "En İyi TV", "Ücretsiz Film"];
+            const adSubtitles = ["En İyi TV!", "Kalite Garantisi", "VIP Keyfi", "Sınırsız Eğlence"];
+            let adIndex = 0;
+            
+            const textInterval = setInterval(() => {
+                screenText.textContent = adTexts[adIndex % adTexts.length];
+                adText.textContent = adSubtitles[adIndex % adSubtitles.length];
+                adIndex++;
+            }, 800);
+            
             // Geri sayım
             let countdown = 5;
             countdownElement.textContent = countdown;
@@ -1020,6 +1345,7 @@
                 
                 if (countdown <= 0) {
                     clearInterval(countdownInterval);
+                    clearInterval(textInterval);
                     
                     // Reklamı kapat
                     adModal.style.display = 'none';
@@ -1084,6 +1410,10 @@
             
             // Bonus bildirimini gizle
             bonusNotification.style.display = 'none';
+            
+            // Video modalını kapat
+            videoModal.style.display = 'none';
+            videoPlayer.src = '';
         }
         
         // Enter tuşu ile giriş
