@@ -3,1431 +3,957 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZahirTV - VIP </title>
+    <title>İSMAİL'E SEVGİ - DÜNYANIN EN ANİMASYONLU HTML'İ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            font-family: 'Arial', sans-serif;
             overflow-x: hidden;
+            min-height: 100vh;
+            perspective: 1000px;
         }
         
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* PARTİKÜL SİSTEMİ */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* KONTEYNIR */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 15px 0;
-            border-bottom: 2px solid #3b82f6;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo h1 {
-            color: #3b82f6;
-            font-size: 24px;
-            text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
-        }
-        
-        .logo span {
-            color: #f59e0b;
-        }
-        
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .jeton-display {
-            background-color: #1e293b;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            color: #fbbf24;
-            border: 1px solid #3b82f6;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-        }
-        
-        .jeton-icon {
-            color: #fbbf24;
-        }
-        
-        .logout-btn {
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 14px;
-        }
-        
-        .logout-btn:hover {
-            background-color: #2563eb;
-        }
-        
-        /* Ana içerik alanı */
-        .content {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        /* Yan panel */
-        .sidebar {
-            width: 200px;
-            background-color: #1e293b;
-            border-radius: 8px;
-            padding: 15px;
-            height: fit-content;
-        }
-        
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        
-        .nav-menu li {
-            padding: 10px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 14px;
-        }
-        
-        .nav-menu li:hover {
-            background-color: #334155;
-        }
-        
-        .nav-menu li.active {
-            background-color: #3b82f6;
-            font-weight: bold;
-        }
-        
-        /* Ana panel */
-        .main-panel {
-            flex: 1;
-            background-color: #1e293b;
-            border-radius: 8px;
             padding: 20px;
+            position: relative;
+            z-index: 10;
         }
         
-        .section-title {
-            color: #3b82f6;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 8px;
+        /* BAŞLIK - ANİMASYONLU */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
             margin-bottom: 20px;
-            font-size: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: titleGlow 2s infinite alternate, titleFloat 3s ease-in-out infinite;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 8s ease infinite, titleFloat 3s ease-in-out infinite;
         }
         
-        /* Giriş/Kayıt formları */
-        .auth-form {
-            max-width: 350px;
-            margin: 0 auto;
-            background-color: #334155;
-            padding: 20px;
-            border-radius: 8px;
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
-        .form-group {
-            margin-bottom: 15px;
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            100% { text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 0, 0, 0.7); }
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            color: #cbd5e1;
-            font-size: 14px;
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #475569;
-            background-color: #1e293b;
-            color: white;
-            font-size: 14px;
-        }
-        
-        .auth-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-        
-        .auth-btn:hover {
-            background-color: #2563eb;
-        }
-        
-        .switch-auth {
-            text-align: center;
-            margin-top: 15px;
-            color: #cbd5e1;
-            font-size: 14px;
-        }
-        
-        .switch-auth a {
-            color: #3b82f6;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        /* Film grid */
-        .movies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-        }
-        
-        .movie-card {
-            background-color: #334155;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .movie-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .movie-poster {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .movie-info {
-            padding: 12px;
-        }
-        
-        .movie-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #f8fafc;
-            font-size: 14px;
-            height: 40px;
-            overflow: hidden;
-        }
-        
-        .movie-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .price-tag {
-            background-color: #3b82f6;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 12px;
-        }
-        
-        .watch-btn {
-            background-color: #10b981;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-        
-        .watch-btn:hover {
-            background-color: #059669;
-        }
-        
-        .watch-btn:disabled {
-            background-color: #64748b;
-            cursor: not-allowed;
-        }
-        
-        /* Reklam modal - ANİMASYONLU */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .modal-content {
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 450px;
-            width: 90%;
-            text-align: center;
-            animation: modalFadeIn 0.5s ease-out;
-        }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .modal-title {
-            color: #3b82f6;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .ad-container {
-            background-color: #0f172a;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border: 2px solid #3b82f6;
+        /* KALP ANİMASYONU */
+        .heart-container {
             position: relative;
-            overflow: hidden;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 40px;
+            animation: heartBeat 1.2s infinite;
         }
         
-        /* ANİMASYONLU REKLAM TEXT */
-        .ad-text {
-            font-size: 28px;
-            color: #f59e0b;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-            margin: 15px 0;
-            animation: pulse 1.5s infinite, colorChange 3s infinite;
-        }
-        
-        @keyframes pulse {
+        @keyframes heartBeat {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            20%, 100% { transform: scale(1); }
         }
         
-        @keyframes colorChange {
-            0% { color: #f59e0b; }
-            33% { color: #3b82f6; }
-            66% { color: #10b981; }
-            100% { color: #f59e0b; }
-        }
-        
-        /* REKLAM ANİMASYONU */
-        .ad-animation {
-            width: 100px;
-            height: 60px;
-            position: relative;
-            margin: 15px auto;
-        }
-        
-        .tv-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            animation: tvGlow 2s infinite alternate;
-        }
-        
-        @keyframes tvGlow {
-            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-            to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4); }
-        }
-        
-        .screen-content {
+        .heart {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            animation: heartPulse 2s infinite, heartRotate 20s infinite linear;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border-radius: 50%;
+        }
+        
+        .heart:before {
+            top: -100px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: 100px;
+        }
+        
+        @keyframes heartPulse {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.2);
+                box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+            }
+        }
+        
+        @keyframes heartRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* İSMAİL YAZISI */
+        .ismail-text {
+            font-size: 5rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: ismailColor 5s infinite, ismailShake 0.5s infinite;
+        }
+        
+        @keyframes ismailColor {
+            0% { color: #ff0000; }
+            20% { color: #ff8800; }
+            40% { color: #ffff00; }
+            60% { color: #00ff00; }
+            80% { color: #0088ff; }
+            100% { color: #ff00ff; }
+        }
+        
+        @keyframes ismailShake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* MESAJ KUTUSU */
+        .message-box {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+            animation: borderGlow 3s infinite, boxFloat 4s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(255, 0, 0, 0.7); box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+            33% { border-color: rgba(0, 255, 0, 0.7); box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); }
+            66% { border-color: rgba(0, 0, 255, 0.7); box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); }
+        }
+        
+        @keyframes boxFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .message-box:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: gradientMove 8s ease infinite;
+            border-radius: 30px;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .message {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: textReveal 2s ease-out;
+        }
+        
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message i {
+            color: #ff0000;
+            animation: iconSpin 3s infinite linear;
+            margin: 0 10px;
+        }
+        
+        @keyframes iconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* KALPLER GALERİSİ */
+        .hearts-gallery {
             display: flex;
             justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            color: white;
-            font-size: 14px;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 50px 0;
         }
         
-        .countdown {
-            font-size: 36px;
-            color: #10b981;
-            font-weight: bold;
-            margin: 15px 0;
-            animation: countdownPulse 1s infinite;
+        .heart-item {
+            width: 100px;
+            height: 100px;
+            background: #ff3366;
+            position: relative;
+            transform: rotate(45deg);
+            animation: heartItemFloat 4s ease-in-out infinite;
         }
         
-        @keyframes countdownPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .heart-item:nth-child(2n) {
+            background: #ff0033;
+            animation-delay: 0.5s;
         }
         
-        .reward-info {
-            background-color: #334155;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-size: 14px;
+        .heart-item:nth-child(3n) {
+            background: #ff6699;
+            animation-delay: 1s;
         }
         
-        /* Arama */
-        .search-container {
-            margin-bottom: 20px;
+        .heart-item:nth-child(4n) {
+            background: #ff0066;
+            animation-delay: 1.5s;
         }
         
-        .search-box {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 2px solid #3b82f6;
-            background-color: #0f172a;
-            color: white;
-            font-size: 14px;
+        .heart-item:nth-child(5n) {
+            background: #ff3399;
+            animation-delay: 2s;
         }
         
-        /* Bonus bildirim */
-        .bonus-notification {
-            background-color: #10b981;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
+        .heart-item:before,
+        .heart-item:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: inherit;
+            border-radius: 50%;
         }
         
-        .bonus-notification button {
-            background-color: #0f172a;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 12px;
+        .heart-item:before {
+            top: -50px;
+            left: 0;
         }
         
-        /* Tarih gösterici */
-        .date-display {
+        .heart-item:after {
+            top: 0;
+            left: 50px;
+        }
+        
+        @keyframes heartItemFloat {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(-30px); }
+        }
+        
+        /* GARDAŞIM YAZISI */
+        .gardasim {
+            font-size: 4rem;
             text-align: center;
-            margin-top: 15px;
-            color: #94a3b8;
-            font-size: 12px;
+            margin: 40px 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: gardasimGlow 2s infinite alternate, gardasimMove 5s infinite;
         }
         
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 8px;
+        @keyframes gardasimGlow {
+            0% { 
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+                color: #ff9900;
+            }
+            100% { 
+                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+                color: #ffff00;
+            }
         }
         
-        .tab {
-            padding: 8px 15px;
-            background-color: #334155;
-            border-radius: 5px 5px 0 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 14px;
+        @keyframes gardasimMove {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
-        .tab.active {
-            background-color: #3b82f6;
-            font-weight: bold;
-        }
-        
-        /* Film oynatıcı modalı */
-        .video-modal {
+        /* FİREWORK ANİMASYONU */
+        .fireworks {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: fireworkExplode 2s forwards;
+        }
+        
+        @keyframes fireworkExplode {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        /* BUTONLAR */
+        .buttons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            z-index: 2000;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
         }
         
-        .video-container {
-            width: 90%;
-            max-width: 800px;
-            background-color: #0f172a;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-        }
-        
-        .video-header {
-            padding: 15px;
-            background-color: #1e293b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .video-title {
-            color: #3b82f6;
-            font-size: 18px;
+        .btn {
+            padding: 20px 40px;
+            font-size: 1.5rem;
             font-weight: bold;
-        }
-        
-        .close-video {
-            background-color: #ef4444;
-            color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            animation: btnPulse 2s infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
-        .video-player {
+        @keyframes btnPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .btn-heart {
+            background: linear-gradient(45deg, #ff0000, #ff3366);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+        }
+        
+        .btn-bro {
+            background: linear-gradient(45deg, #3366ff, #00ccff);
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-love {
+            background: linear-gradient(45deg, #ff00cc, #ff0066);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 0, 204, 0.4);
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: 450px;
-            background-color: #000;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
         }
         
-        .video-info {
-            padding: 15px;
-            background-color: #1e293b;
+        .btn:hover:before {
+            left: 100%;
         }
         
-        .video-info p {
-            margin-bottom: 10px;
-            color: #cbd5e1;
+        .btn:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
-        /* Responsive */
+        /* MÜZİK */
+        .music-player {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            animation: musicPulse 3s infinite;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.7); }
+        }
+        
+        .music-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            animation: musicText 3s infinite;
+        }
+        
+        @keyframes musicText {
+            0%, 100% { color: #ff9900; }
+            50% { color: #00ffff; }
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+            animation: footerGlow 5s infinite linear;
+            background-size: 200% 100%;
+        }
+        
+        @keyframes footerGlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+        
+        /* 3D DÖNEN KALP */
+        .heart-3d {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 10s infinite linear;
+        }
+        
+        .heart-3d div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #ff3366;
+            transform-origin: center;
+        }
+        
+        .heart-3d div:before,
+        .heart-3d div:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: inherit;
+            border-radius: 50%;
+        }
+        
+        .heart-3d div:before {
+            top: -100px;
+            left: 0;
+        }
+        
+        .heart-3d div:after {
+            top: 0;
+            left: 100px;
+        }
+        
+        .heart-3d .front {
+            transform: translateZ(100px);
+        }
+        
+        .heart-3d .back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        
+        .heart-3d .right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .heart-3d .left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        
+        .heart-3d .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .heart-3d .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        
+        @keyframes rotate3d {
+            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-            }
-            
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 15px;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .video-player {
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            }
-            
-            .movie-poster {
-                height: 180px;
-            }
-            
-            .video-player {
-                height: 200px;
-            }
+            .main-title { font-size: 3rem; }
+            .ismail-text { font-size: 3.5rem; }
+            .gardasim { font-size: 2.5rem; }
+            .message { font-size: 1.4rem; }
+            .heart-container { width: 200px; height: 200px; }
+            .heart { width: 150px; height: 150px; }
+            .heart:before, .heart:after { width: 150px; height: 150px; }
+            .heart:before { top: -75px; }
+            .heart:after { left: 75px; }
+            .buttons { flex-direction: column; align-items: center; }
+            .btn { width: 80%; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <h1>Zahir<span>TV</span></h1>
-            </div>
-            <div class="user-info" id="user-info" style="display: none;">
-                <div class="jeton-display">
-                    <span class="jeton-icon">🪙</span>
-                    <span id="jeton-count">90</span> Jeton
-                </div>
-                <button class="logout-btn" id="logout-btn">Çıkış Yap</button>
-            </div>
-        </div>
-    </header>
+    <!-- PARTİKÜLLER -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- HAVAI FİŞEK -->
+    <div class="fireworks" id="fireworks"></div>
     
     <div class="container">
-        <div class="content">
-            <!-- Yan panel (sadece giriş yapıldıysa görünür) -->
-            <div class="sidebar" id="sidebar" style="display: none;">
-                <ul class="nav-menu">
-                    <li class="active" data-section="movies">Filmler</li>
-                    <li data-section="watched">İzlediklerim</li>
-                    <li data-section="search">Film Ara</li>
-                    <li data-section="ad-watch">Reklam İzle (Jeton Kazan)</li>
-                    <li data-section="account">Hesabım</li>
-                </ul>
-                
-                <div class="date-display" id="date-display"></div>
+        <!-- BAŞLIK -->
+        <div class="header">
+            <h1 class="main-title">İSMAİL'E SEVGİ</h1>
+            <div class="heart-container">
+                <div class="heart"></div>
             </div>
-            
-            <!-- Ana panel -->
-            <div class="main-panel" id="main-panel">
-                <!-- Giriş/Kayıt bölümü (ilk görünen) -->
-                <div id="auth-section">
-                    <div class="tabs">
-                        <div class="tab active" data-tab="login">Giriş Yap</div>
-                        <div class="tab" data-tab="register">Kayıt Ol</div>
-                    </div>
-                    
-                    <div id="login-form" class="auth-form">
-                        <h2 class="section-title">ZahirTV'ye Giriş Yap</h2>
-                        <div class="form-group">
-                            <label for="login-username">Kullanıcı Adı</label>
-                            <input type="text" id="login-username" placeholder="Kullanıcı adınızı girin">
-                        </div>
-                        <div class="form-group">
-                            <label for="login-password">Şifre</label>
-                            <input type="password" id="login-password" placeholder="Şifrenizi girin">
-                        </div>
-                        <button class="auth-btn" id="login-btn">Giriş Yap</button>
-                        <div class="switch-auth">
-                            Hesabınız yok mu? <a id="switch-to-register">Kayıt Olun</a>
-                        </div>
-                    </div>
-                    
-                    <div id="register-form" class="auth-form" style="display: none;">
-                        <h2 class="section-title">ZahirTV'ye Kayıt Ol</h2>
-                        <div class="form-group">
-                            <label for="register-username">Kullanıcı Adı</label>
-                            <input type="text" id="register-username" placeholder="Kullanıcı adı seçin">
-                        </div>
-                        <div class="form-group">
-                            <label for="register-password">Şifre</label>
-                            <input type="password" id="register-password" placeholder="Şifre seçin">
-                        </div>
-                        <div class="form-group">
-                            <label for="register-password-again">Şifre Tekrar</label>
-                            <input type="password" id="register-password-again" placeholder="Şifreyi tekrar girin">
-                        </div>
-                        <button class="auth-btn" id="register-btn">Kayıt Ol</button>
-                        <div class="switch-auth">
-                            Zaten hesabınız var mı? <a id="switch-to-login">Giriş Yapın</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Filmler bölümü (giriş yapılınca görünür) -->
-                <div id="movies-section" style="display: none;">
-                    <h2 class="section-title">VIP Filmler</h2>
-                    
-                    <div id="bonus-notification" class="bonus-notification" style="display: none;">
-                        <div>
-                            <strong>Günlük Giriş Bonusu!</strong> Bugün giriş yaptığınız için 30 jeton kazandınız.
-                        </div>
-                        <button id="close-bonus">Kapat</button>
-                    </div>
-                    
-                    <div class="movies-grid" id="movies-grid">
-                        <!-- Filmler JavaScript ile eklenecek -->
-                    </div>
-                </div>
-                
-                <!-- İzlediklerim bölümü -->
-                <div id="watched-section" style="display: none;">
-                    <h2 class="section-title">İzlediğim Filmler</h2>
-                    <div class="movies-grid" id="watched-grid">
-                        <!-- İzlenen filmler buraya eklenecek -->
-                    </div>
-                </div>
-                
-                <!-- Film arama bölümü -->
-                <div id="search-section" style="display: none;">
-                    <h2 class="section-title">Film Ara</h2>
-                    <div class="search-container">
-                        <input type="text" class="search-box" id="search-input" placeholder="Film adı, tür veya yönetmen ara...">
-                    </div>
-                    <div class="movies-grid" id="search-results">
-                        <!-- Arama sonuçları buraya eklenecek -->
-                    </div>
-                </div>
-                
-                <!-- Reklam izleme bölümü -->
-                <div id="ad-watch-section" style="display: none;">
-                    <h2 class="section-title">Reklam İzle ve Jeton Kazan</h2>
-                    <div class="reward-info">
-                        <p>Reklam izleyerek günde 1 kez 30 jeton kazanabilirsiniz.</p>
-                        <p>Son reklam izleme: <span id="last-ad-watch">Hiç izlemediniz</span></p>
-                        <p>Bugün reklam izleyip izleyemeyeceğiniz: <span id="ad-availability" style="color:#10b981; font-weight:bold;">Evet, izleyebilirsiniz</span></p>
-                    </div>
-                    
-                    <button class="auth-btn" id="watch-ad-btn" style="margin-top: 15px;">Reklam İzle (30 Jeton Kazan)</button>
-                </div>
-                
-                <!-- Hesap bölümü -->
-                <div id="account-section" style="display: none;">
-                    <h2 class="section-title">Hesap Bilgilerim</h2>
-                    <div class="auth-form">
-                        <div class="form-group">
-                            <label>Kullanıcı Adı</label>
-                            <input type="text" id="account-username" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Toplam Jeton</label>
-                            <input type="text" id="account-total-jets" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Kayıt Tarihi</label>
-                            <input type="text" id="account-reg-date" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Toplam İzlenen Film</label>
-                            <input type="text" id="account-total-watched" readonly>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="ismail-text">İSMAİL</h2>
+        </div>
+        
+        <!-- MESAJ KUTUSU -->
+        <div class="message-box">
+            <div class="message">
+                <i class="fas fa-heart"></i>
+                KARDEŞİM İSMAİL! SENİ ÇOK SEVİYORUM! 
+                <i class="fas fa-heart"></i>
+                <br><br>
+                HAYATIMDAKİ EN ÖZEL İNSANSIN! 
+                <i class="fas fa-star"></i>
+                <br><br>
+                SENİNLE GEÇEN HER AN BENİM İÇİN ÇOK DEĞERLİ!
+                <i class="fas fa-gem"></i>
+                <br><br>
+                SEN BENİM CAN DOSTUMSUN, GARDAŞIMSIN, KARDEŞİMSİN!
+                <i class="fas fa-crown"></i>
             </div>
         </div>
-    </div>
-    
-    <!-- Reklam modalı - ANİMASYONLU -->
-    <div class="modal-overlay" id="ad-modal" style="display: none;">
-        <div class="modal-content">
-            <h2 class="modal-title">Reklam İzliyorsunuz</h2>
-            <div class="ad-container">
-                <div class="ad-animation">
-                    <div class="tv-screen">
-                        <div class="screen-content" id="screen-text">Zahir TV</div>
-                    </div>
-                </div>
-                <div class="ad-text" id="ad-text">En İyi TV!</div>
-                <div class="countdown" id="countdown">5</div>
-                <p>Reklam bitince 30 jeton kazanacaksınız...</p>
-            </div>
-            <div class="reward-info">
-                <p>Reklamı tam izleyerek <strong>30 jeton</strong> kazanacaksınız.</p>
-                <p>Lütfen bekleyin, reklam otomatik kapanacaktır.</p>
-            </div>
+        
+        <!-- GARDAŞIM YAZISI -->
+        <h2 class="gardasim">GARDAŞIM BENİM!</h2>
+        
+        <!-- 3D DÖNEN KALP -->
+        <div class="heart-3d">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
         </div>
-    </div>
-    
-    <!-- Film oynatıcı modalı -->
-    <div class="video-modal" id="video-modal" style="display: none;">
-        <div class="video-container">
-            <div class="video-header">
-                <div class="video-title" id="video-title">Film İzleniyor</div>
-                <button class="close-video" id="close-video">Kapat</button>
-            </div>
-            <div class="video-player" id="video-player">
-                <iframe width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <p id="video-description"></p>
-                <p id="video-duration"></p>
-            </div>
+        
+        <!-- KALPLER GALERİSİ -->
+        <div class="hearts-gallery">
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+            <div class="heart-item"></div>
+        </div>
+        
+        <!-- BUTONLAR -->
+        <div class="buttons">
+            <button class="btn btn-heart" id="heart-btn">
+                <i class="fas fa-heart"></i> KALBİMİ GÖSTER
+            </button>
+            <button class="btn btn-bro" id="bro-btn">
+                <i class="fas fa-users"></i> GARDAŞLIK
+            </button>
+            <button class="btn btn-love" id="love-btn">
+                <i class="fas fa-fire"></i> SEVGİ PATLAMASI
+            </button>
+        </div>
+        
+        <!-- MÜZİK -->
+        <div class="music-player">
+            <h3 class="music-title">
+                <i class="fas fa-music"></i> İSMAİL İÇİN ÖZEL ŞARKI <i class="fas fa-music"></i>
+            </h3>
+            <button class="btn btn-heart" id="music-btn">
+                <i class="fas fa-play"></i> MÜZİĞİ BAŞLAT
+            </button>
+            <audio id="bg-music" loop>
+                <source src="https://assets.mixkit.co/music/preview/mixkit-happy-day-583.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>BU SAYFA İSMAİL'E OLAN SEVGİMİ GÖSTERMEK İÇİN YAPILMIŞTIR</p>
+            <p>HAYATIMDAKİ EN DEĞERLİ İNSAN İSMAİL</p>
+            <p>© 2023 - Sonsuza Dek Gardaşlık</p>
         </div>
     </div>
     
     <script>
-        // Uygulama durumu
-        const state = {
-            currentUser: null,
-            users: JSON.parse(localStorage.getItem('zahirTVUsers')) || [],
-            movies: [
-                { 
-                    id: 1, 
-                    title: "Vizontele", 
-                    genre: "Komedi", 
-                    year: 2000, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "tHlpqXbSwws", // YouTube video ID
-                    description: "1974 yılında, Van'ın bir köyüne televizyon gelir. Köylüler ilk kez televizyonla tanışır ve hayatları değişir."
-                },
-                { 
-                    id: 2, 
-                    title: "Kurtlar Vadisi Irak", 
-                    genre: "Aksiyon", 
-                    year: 2006, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "6vY9UPiI4eQ",
-                    description: "Irak'ta görev yapan bir Türk timinin Amerikalılar tarafından rehin alınmasıyla başlayan olaylar."
-                },
-                { 
-                    id: 3, 
-                    title: "Recep İvedik", 
-                    genre: "Komedi", 
-                    year: 2008, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "Wg86eQkdudI",
-                    description: "Sıradan bir taksi şoförü olan Recep İvedik'in komik hayat hikayesi."
-                },
-                { 
-                    id: 4, 
-                    title: "Düğün Dernek", 
-                    genre: "Komedi", 
-                    year: 2013, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "mKZcT5vK4_c",
-                    description: "Almanya'da yaşayan iki Türk'ün köylerine dönüp düğün yapma çabaları."
-                },
-                { 
-                    id: 5, 
-                    title: "A.R.O.G", 
-                    genre: "Komedi", 
-                    year: 2008, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "p5AKvXh5NQ4",
-                    description: "G.O.R.A'nın devamı olan filmde Arif'in zamanda yolculuk maceraları."
-                },
-                { 
-                    id: 6, 
-                    title: "G.O.R.A", 
-                    genre: "Bilim Kurgu", 
-                    year: 2004, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "oLCfUCSMJo4",
-                    description: "Bir halı satıcısının uzaylılar tarafından kaçırılıp G.O.R.A gezegenine götürülmesi."
-                },
-                { 
-                    id: 7, 
-                    title: "Eşkiya", 
-                    genre: "Dram", 
-                    year: 1996, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "CjK8YjHqR3E",
-                    description: "35 yıl hapis yatan bir eşkıyanın İstanbul'a dönüşü ve intikam hikayesi."
-                },
-                { 
-                    id: 8, 
-                    title: "Hababam Sınıfı", 
-                    genre: "Komedi", 
-                    year: 1975, 
-                    price: 30, 
-                    watched: false, 
-                    poster: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                    videoId: "z4wKjXl6eL4",
-                    description: "Özel Çamlıca Lisesi'nin yaramaz öğrencilerinden oluşan Hababam Sınıfı'nın eğlenceli maceraları."
-                }
-            ],
-            watchedMovies: JSON.parse(localStorage.getItem('watchedMovies')) || [],
-            dailyBonusClaimed: JSON.parse(localStorage.getItem('dailyBonusClaimed')) || false,
-            lastAdWatch: localStorage.getItem('lastAdWatch') || null
-        };
-        
-        // DOM elementleri
-        const authSection = document.getElementById('auth-section');
-        const moviesSection = document.getElementById('movies-section');
-        const watchedSection = document.getElementById('watched-section');
-        const searchSection = document.getElementById('search-section');
-        const adWatchSection = document.getElementById('ad-watch-section');
-        const accountSection = document.getElementById('account-section');
-        const sidebar = document.getElementById('sidebar');
-        const userInfo = document.getElementById('user-info');
-        const jetonCount = document.getElementById('jeton-count');
-        const moviesGrid = document.getElementById('movies-grid');
-        const watchedGrid = document.getElementById('watched-grid');
-        const searchResults = document.getElementById('search-results');
-        const searchInput = document.getElementById('search-input');
-        const bonusNotification = document.getElementById('bonus-notification');
-        const adModal = document.getElementById('ad-modal');
-        const countdownElement = document.getElementById('countdown');
-        const dateDisplay = document.getElementById('date-display');
-        const lastAdWatchElement = document.getElementById('last-ad-watch');
-        const adAvailabilityElement = document.getElementById('ad-availability');
-        const videoModal = document.getElementById('video-modal');
-        const videoPlayer = document.getElementById('video-player').querySelector('iframe');
-        const videoTitle = document.getElementById('video-title');
-        const videoDescription = document.getElementById('video-description');
-        const closeVideoBtn = document.getElementById('close-video');
-        const screenText = document.getElementById('screen-text');
-        const adText = document.getElementById('ad-text');
-        
-        // Tarih gösterici
-        function updateDateDisplay() {
-            const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            dateDisplay.textContent = now.toLocaleDateString('tr-TR', options);
+        // PARTİKÜL SİSTEMİ
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Rastgele pozisyon
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Rastgele boyut
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Rastgele renk
+                const colors = ['#ff0000', '#ff6600', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff'];
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Rastgele animasyon süresi
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Rastgele gecikme
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
         }
         
-        // Sayfa yüklendiğinde
-        document.addEventListener('DOMContentLoaded', function() {
-            updateDateDisplay();
+        // HAVAI FİŞEK SİSTEMİ
+        function createFirework(x, y) {
+            const fireworksContainer = document.getElementById('fireworks');
+            const particleCount = 50;
+            const colors = ['#ff0000', '#ff9900', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff'];
             
-            // Kullanıcı girişi kontrol et
-            const loggedInUser = localStorage.getItem('currentUser');
-            if (loggedInUser) {
-                loginUser(JSON.parse(loggedInUser));
-            }
-            
-            // Filmleri yükle
-            renderMovies();
-            
-            // Reklam izleme durumunu güncelle
-            updateAdWatchStatus();
-            
-            // Video kapatma butonu
-            closeVideoBtn.addEventListener('click', function() {
-                videoModal.style.display = 'none';
-                // Videoyu durdur
-                videoPlayer.src = '';
-            });
-        });
-        
-        // Tab geçişleri
-        document.querySelectorAll('[data-tab]').forEach(tab => {
-            tab.addEventListener('click', function() {
-                const tabId = this.getAttribute('data-tab');
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('firework');
                 
-                // Tüm tabları deaktif et
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                // Tüm formları gizle
-                document.getElementById('login-form').style.display = 'none';
-                document.getElementById('register-form').style.display = 'none';
+                // Pozisyon
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
                 
-                // Seçilen tabı aktif et
-                this.classList.add('active');
+                // Rastgele renk
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Seçilen formu göster
-                document.getElementById(`${tabId}-form`).style.display = 'block';
-            });
-        });
-        
-        // Giriş formu switch
-        document.getElementById('switch-to-register').addEventListener('click', function() {
-            document.querySelector('[data-tab="register"]').click();
-        });
-        
-        document.getElementById('switch-to-login').addEventListener('click', function() {
-            document.querySelector('[data-tab="login"]').click();
-        });
-        
-        // Giriş yap butonu
-        document.getElementById('login-btn').addEventListener('click', function() {
-            const username = document.getElementById('login-username').value.trim();
-            const password = document.getElementById('login-password').value.trim();
-            
-            if (!username || !password) {
-                alert('Lütfen kullanıcı adı ve şifre girin!');
-                return;
-            }
-            
-            const user = state.users.find(u => u.username === username && u.password === password);
-            
-            if (user) {
-                loginUser(user);
-            } else {
-                alert('Kullanıcı adı veya şifre hatalı!');
-            }
-        });
-        
-        // Kayıt ol butonu
-        document.getElementById('register-btn').addEventListener('click', function() {
-            const username = document.getElementById('register-username').value.trim();
-            const password = document.getElementById('register-password').value.trim();
-            const passwordAgain = document.getElementById('register-password-again').value.trim();
-            
-            if (!username || !password || !passwordAgain) {
-                alert('Lütfen tüm alanları doldurun!');
-                return;
-            }
-            
-            if (password !== passwordAgain) {
-                alert('Şifreler eşleşmiyor!');
-                return;
-            }
-            
-            if (state.users.find(u => u.username === username)) {
-                alert('Bu kullanıcı adı zaten alınmış!');
-                return;
-            }
-            
-            const newUser = {
-                username,
-                password,
-                jets: 90,
-                regDate: new Date().toLocaleDateString('tr-TR'),
-                watchedMovies: []
-            };
-            
-            state.users.push(newUser);
-            localStorage.setItem('zahirTVUsers', JSON.stringify(state.users));
-            
-            alert('Kayıt başarılı! Giriş yapabilirsiniz.');
-            document.querySelector('[data-tab="login"]').click();
-            document.getElementById('login-username').value = username;
-            document.getElementById('login-password').value = '';
-        });
-        
-        // Kullanıcı giriş işlemi
-        function loginUser(user) {
-            state.currentUser = user;
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            
-            // Giriş ekranını gizle, diğer bölümleri göster
-            authSection.style.display = 'none';
-            sidebar.style.display = 'block';
-            userInfo.style.display = 'flex';
-            
-            // Günlük bonus kontrolü
-            const today = new Date().toDateString();
-            const lastBonusDate = localStorage.getItem('lastBonusDate');
-            
-            if (lastBonusDate !== today) {
-                // Yeni gün, bonus ver
-                state.currentUser.jets += 30;
-                updateUserInStorage();
-                bonusNotification.style.display = 'flex';
-                localStorage.setItem('lastBonusDate', today);
-            }
-            
-            // Jeton sayısını güncelle
-            jetonCount.textContent = state.currentUser.jets;
-            
-            // Varsayılan olarak filmler bölümünü göster
-            showSection('movies');
-            
-            // Menü tıklama olayları
-            document.querySelectorAll('.nav-menu li').forEach(item => {
-                item.addEventListener('click', function() {
-                    // Tüm menü öğelerinden active class'ını kaldır
-                    document.querySelectorAll('.nav-menu li').forEach(i => i.classList.remove('active'));
-                    // Tıklanan öğeye active class'ını ekle
-                    this.classList.add('active');
-                    
-                    // Bölümü göster
-                    const section = this.getAttribute('data-section');
-                    showSection(section);
+                // Rastgele boyut
+                const size = Math.random() * 8 + 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Rastgele hareket
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 100 + 50;
+                const vx = Math.cos(angle) * speed;
+                const vy = Math.sin(angle) * speed;
+                
+                // Animasyon
+                particle.animate([
+                    { transform: `translate(0, 0)`, opacity: 1 },
+                    { transform: `translate(${vx}px, ${vy}px)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 1000 + 1000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 0.1)'
                 });
-            });
-            
-            // Çıkış butonu
-            document.getElementById('logout-btn').addEventListener('click', logoutUser);
-            
-            // Bonus bildirimi kapatma
-            document.getElementById('close-bonus').addEventListener('click', function() {
-                bonusNotification.style.display = 'none';
-            });
-            
-            // Reklam izleme butonu
-            document.getElementById('watch-ad-btn').addEventListener('click', watchAd);
-            
-            // Arama kutusu
-            searchInput.addEventListener('input', searchMovies);
-        }
-        
-        // Bölüm gösterme
-        function showSection(section) {
-            // Tüm bölümleri gizle
-            moviesSection.style.display = 'none';
-            watchedSection.style.display = 'none';
-            searchSection.style.display = 'none';
-            adWatchSection.style.display = 'none';
-            accountSection.style.display = 'none';
-            
-            // İstenen bölümü göster
-            document.getElementById(`${section}-section`).style.display = 'block';
-            
-            // Bölüme özel içerikleri yükle
-            if (section === 'movies') {
-                renderMovies();
-            } else if (section === 'watched') {
-                renderWatchedMovies();
-            } else if (section === 'search') {
-                searchMovies();
-            } else if (section === 'ad-watch') {
-                updateAdWatchStatus();
-            } else if (section === 'account') {
-                renderAccountInfo();
+                
+                fireworksContainer.appendChild(particle);
+                
+                // Temizle
+                setTimeout(() => {
+                    particle.remove();
+                }, 2000);
             }
         }
         
-        // Filmleri render et
-        function renderMovies() {
-            moviesGrid.innerHTML = '';
-            
-            state.movies.forEach(movie => {
-                const isWatched = state.currentUser.watchedMovies && 
-                    state.currentUser.watchedMovies.includes(movie.id);
-                
-                const movieCard = document.createElement('div');
-                movieCard.className = 'movie-card';
-                movieCard.innerHTML = `
-                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
-                    <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
-                        <div class="movie-price">
-                            <div class="price-tag">${movie.price} Jeton</div>
-                            <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
-                                ${isWatched ? 'İzlendi' : (state.currentUser.jets < movie.price ? 'Yetersiz Jeton' : 'İzle')}
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                moviesGrid.appendChild(movieCard);
-                
-                // İzle butonu olayı
-                if (!isWatched && state.currentUser.jets >= movie.price) {
-                    const watchBtn = movieCard.querySelector('.watch-btn');
-                    watchBtn.addEventListener('click', function() {
-                        watchMovie(movie.id);
-                    });
-                }
-            });
-        }
-        
-        // Film izleme
-        function watchMovie(movieId) {
-            const movie = state.movies.find(m => m.id === movieId);
-            
-            if (!movie) return;
-            
-            // Jeton kontrolü
-            if (state.currentUser.jets < movie.price) {
-                alert('Yetersiz jeton! Reklam izleyerek jeton kazanabilirsiniz.');
-                return;
+        // BUTON ETKİLEŞİMLERİ
+        document.getElementById('heart-btn').addEventListener('click', function() {
+            // Kalp patlaması efekti
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    createFirework(x, y);
+                }, i * 50);
             }
             
-            // Kullanıcıyı onayla
-            const confirmWatch = confirm(`"${movie.title}" filmini izlemek için ${movie.price} jeton harcanacak. Onaylıyor musunuz?`);
-            if (!confirmWatch) return;
+            // Buton efekti
+            this.innerHTML = '<i class="fas fa-heartbeat"></i> KALP ATIYOR!';
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-heart"></i> KALBİMİ GÖSTER';
+                this.style.animation = 'btnPulse 2s infinite';
+            }, 2000);
+        });
+        
+        document.getElementById('bro-btn').addEventListener('click', function() {
+            // Gardaşlık efekti
+            alert('GARDAŞLIK ÖMÜR BOYU! SENİ SEVİYORUM İSMAİL!');
             
-            // Jetonları düş
-            state.currentUser.jets -= movie.price;
+            // Sayfada yazı efekti
+            const broText = document.createElement('div');
+            broText.textContent = 'GARDAŞIM İSMAİL!';
+            broText.style.position = 'fixed';
+            broText.style.top = '50%';
+            broText.style.left = '50%';
+            broText.style.transform = 'translate(-50%, -50%)';
+            broText.style.fontSize = '5rem';
+            broText.style.fontWeight = '900';
+            broText.style.color = '#ff0000';
+            broText.style.zIndex = '1000';
+            broText.style.textShadow = '0 0 20px white';
+            broText.style.animation = 'textReveal 1s forwards';
+            document.body.appendChild(broText);
             
-            // Filmi izlenenlere ekle
-            if (!state.currentUser.watchedMovies) {
-                state.currentUser.watchedMovies = [];
+            setTimeout(() => {
+                broText.style.animation = 'textReveal 1s reverse forwards';
+                setTimeout(() => {
+                    broText.remove();
+                }, 1000);
+            }, 2000);
+        });
+        
+        document.getElementById('love-btn').addEventListener('click', function() {
+            // Sevgi patlaması efekti
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    createFirework(x, y);
+                }, i * 20);
             }
             
-            if (!state.currentUser.watchedMovies.includes(movieId)) {
-                state.currentUser.watchedMovies.push(movieId);
-            }
+            // Arka plan değişimi
+            document.body.style.animation = 'none';
+            setTimeout(() => {
+                document.body.style.animation = 'gradientBG 15s ease infinite';
+            }, 100);
             
-            // Kullanıcıyı güncelle
-            updateUserInStorage();
-            
-            // Jeton sayısını güncelle
-            jetonCount.textContent = state.currentUser.jets;
-            
-            // Film listesini güncelle
-            renderMovies();
-            
-            // Filmi aç
-            playMovie(movie);
-        }
+            // Buton efekti
+            this.innerHTML = '<i class="fas fa-fire"></i> SEVGİ PATLADI!';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-fire"></i> SEVGİ PATLAMASI';
+            }, 3000);
+        });
         
-        // Film oynatma
-        function playMovie(movie) {
-            videoTitle.textContent = `${movie.title} (${movie.year})`;
-            videoDescription.textContent = movie.description;
-            
-            // YouTube video URL'si oluştur
-            videoPlayer.src = `https://www.youtube.com/embed/${movie.videoId}?autoplay=1&rel=0`;
-            
-            // Video modalını göster
-            videoModal.style.display = 'flex';
-            
-            alert(`"${movie.title}" filmi başarıyla izleniyor! Kalan jeton: ${state.currentUser.jets}`);
-        }
+        // MÜZİK BUTONU
+        const musicBtn = document.getElementById('music-btn');
+        const bgMusic = document.getElementById('bg-music');
+        let isPlaying = false;
         
-        // İzlenen filmleri render et
-        function renderWatchedMovies() {
-            watchedGrid.innerHTML = '';
-            
-            if (!state.currentUser.watchedMovies || state.currentUser.watchedMovies.length === 0) {
-                watchedGrid.innerHTML = '<p style="color:#94a3b8; text-align:center; width:100%;">Henüz hiç film izlemediniz.</p>';
-                return;
-            }
-            
-            state.currentUser.watchedMovies.forEach(movieId => {
-                const movie = state.movies.find(m => m.id === movieId);
-                if (!movie) return;
+        musicBtn.addEventListener('click', function() {
+            if (!isPlaying) {
+                bgMusic.play();
+                this.innerHTML = '<i class="fas fa-pause"></i> MÜZİĞİ DURDUR';
+                isPlaying = true;
                 
-                const movieCard = document.createElement('div');
-                movieCard.className = 'movie-card';
-                movieCard.innerHTML = `
-                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
-                    <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
-                        <div class="movie-price">
-                            <div style="color:#10b981; font-weight:bold; font-size:12px;">✓ İzlendi</div>
-                            <button class="watch-btn" style="background-color:#3b82f6;" data-id="${movie.id}">
-                                Tekrar İzle
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                watchedGrid.appendChild(movieCard);
-                
-                // Tekrar izle butonu
-                const rewatchBtn = movieCard.querySelector('.watch-btn');
-                rewatchBtn.addEventListener('click', function() {
-                    playMovie(movie);
-                });
-            });
-        }
-        
-        // Film ara
-        function searchMovies() {
-            const query = searchInput.value.toLowerCase();
-            searchResults.innerHTML = '';
-            
-            const filteredMovies = state.movies.filter(movie => 
-                movie.title.toLowerCase().includes(query) || 
-                movie.genre.toLowerCase().includes(query)
-            );
-            
-            if (filteredMovies.length === 0) {
-                searchResults.innerHTML = '<p style="color:#94a3b8; text-align:center; width:100%;">Aramanızla eşleşen film bulunamadı.</p>';
-                return;
-            }
-            
-            filteredMovies.forEach(movie => {
-                const isWatched = state.currentUser.watchedMovies && 
-                    state.currentUser.watchedMovies.includes(movie.id);
-                
-                const movieCard = document.createElement('div');
-                movieCard.className = 'movie-card';
-                movieCard.innerHTML = `
-                    <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
-                    <div class="movie-info">
-                        <div class="movie-title">${movie.title} (${movie.year})<br><small>${movie.genre}</small></div>
-                        <div class="movie-price">
-                            <div class="price-tag">${movie.price} Jeton</div>
-                            <button class="watch-btn" data-id="${movie.id}" ${isWatched ? 'disabled' : (state.currentUser.jets < movie.price ? 'disabled' : '')}>
-                                ${isWatched ? 'İzlendi' : (state.currentUser.jets < movie.price ? 'Yetersiz Jeton' : 'İzle')}
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                searchResults.appendChild(movieCard);
-                
-                // İzle butonu olayı
-                if (!isWatched && state.currentUser.jets >= movie.price) {
-                    const watchBtn = movieCard.querySelector('.watch-btn');
-                    watchBtn.addEventListener('click', function() {
-                        watchMovie(movie.id);
-                    });
-                }
-            });
-        }
-        
-        // Reklam izleme durumunu güncelle
-        function updateAdWatchStatus() {
-            if (state.lastAdWatch) {
-                const lastDate = new Date(state.lastAdWatch);
-                lastAdWatchElement.textContent = lastDate.toLocaleDateString('tr-TR') + ' ' + lastDate.toLocaleTimeString('tr-TR');
-                
-                // Bugün reklam izlenmiş mi kontrol et
-                const today = new Date();
-                const lastAdDate = new Date(state.lastAdWatch);
-                
-                if (lastAdDate.toDateString() === today.toDateString()) {
-                    adAvailabilityElement.textContent = "Hayır, bugün zaten reklam izlediniz";
-                    adAvailabilityElement.style.color = "#ef4444";
-                    document.getElementById('watch-ad-btn').disabled = true;
-                } else {
-                    adAvailabilityElement.textContent = "Evet, izleyebilirsiniz";
-                    adAvailabilityElement.style.color = "#10b981";
-                    document.getElementById('watch-ad-btn').disabled = false;
-                }
+                // Müzikle birlikte ek efekti
+                document.body.style.animation = 'gradientBG 5s ease infinite';
             } else {
-                lastAdWatchElement.textContent = "Hiç izlemediniz";
-                adAvailabilityElement.textContent = "Evet, izleyebilirsiniz";
-                adAvailabilityElement.style.color = "#10b981";
-                document.getElementById('watch-ad-btn').disabled = false;
+                bgMusic.pause();
+                this.innerHTML = '<i class="fas fa-play"></i> MÜZİĞİ BAŞLAT';
+                isPlaying = false;
+                document.body.style.animation = 'gradientBG 15s ease infinite';
             }
-        }
+        });
         
-        // Reklam izle - ANİMASYONLU
-        function watchAd() {
-            // Bugün reklam izlenmiş mi kontrol et
-            const today = new Date();
-            if (state.lastAdWatch) {
-                const lastAdDate = new Date(state.lastAdWatch);
-                if (lastAdDate.toDateString() === today.toDateString()) {
-                    alert("Bugün zaten reklam izlediniz. Yarın tekrar deneyin!");
-                    return;
-                }
-            }
+        // SAYFA YÜKLENDİĞİNDE
+        window.addEventListener('load', function() {
+            createParticles();
             
-            // Reklam modalını göster
-            adModal.style.display = 'flex';
+            // Otomatik havai fişek
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                createFirework(x, y);
+            }, 3000);
             
-            // Reklam animasyonu için metin değişimi
-            const adTexts = ["Zahir TV", "En Kaliteli", "En İyi TV", "Ücretsiz Film"];
-            const adSubtitles = ["En İyi TV!", "Kalite Garantisi", "VIP Keyfi", "Sınırsız Eğlence"];
-            let adIndex = 0;
-            
-            const textInterval = setInterval(() => {
-                screenText.textContent = adTexts[adIndex % adTexts.length];
-                adText.textContent = adSubtitles[adIndex % adSubtitles.length];
-                adIndex++;
-            }, 800);
-            
-            // Geri sayım
-            let countdown = 5;
-            countdownElement.textContent = countdown;
-            
-            const countdownInterval = setInterval(() => {
-                countdown--;
-                countdownElement.textContent = countdown;
-                
-                if (countdown <= 0) {
-                    clearInterval(countdownInterval);
-                    clearInterval(textInterval);
-                    
-                    // Reklamı kapat
-                    adModal.style.display = 'none';
-                    
-                    // Jeton ver
-                    state.currentUser.jets += 30;
-                    updateUserInStorage();
-                    jetonCount.textContent = state.currentUser.jets;
-                    
-                    // Reklam izleme tarihini kaydet
-                    state.lastAdWatch = new Date().toISOString();
-                    localStorage.setItem('lastAdWatch', state.lastAdWatch);
-                    
-                    // Reklam durumunu güncelle
-                    updateAdWatchStatus();
-                    
-                    alert("Reklam izleme tamamlandı! 30 jeton kazandınız.");
-                    
-                    // Film listesini güncelle (jetonlar değişti)
-                    renderMovies();
-                }
+            // Hoş geldin mesajı
+            setTimeout(() => {
+                alert('İSMAİL GARDAŞIMA HOŞ GELDİN! SENİ ÇOK SEVİYORUM!');
             }, 1000);
-        }
+        });
         
-        // Hesap bilgilerini göster
-        function renderAccountInfo() {
-            document.getElementById('account-username').value = state.currentUser.username;
-            document.getElementById('account-total-jets').value = state.currentUser.jets;
-            document.getElementById('account-reg-date').value = state.currentUser.regDate || "Bilinmiyor";
-            
-            const totalWatched = state.currentUser.watchedMovies ? state.currentUser.watchedMovies.length : 0;
-            document.getElementById('account-total-watched').value = totalWatched;
-        }
-        
-        // Kullanıcıyı localStorage'da güncelle
-        function updateUserInStorage() {
-            // Kullanıcıyı users dizisinde güncelle
-            const userIndex = state.users.findIndex(u => u.username === state.currentUser.username);
-            if (userIndex !== -1) {
-                state.users[userIndex] = state.currentUser;
-                localStorage.setItem('zahirTVUsers', JSON.stringify(state.users));
-            }
-            
-            // currentUser'ı güncelle
-            localStorage.setItem('currentUser', JSON.stringify(state.currentUser));
-        }
-        
-        // Çıkış yap
-        function logoutUser() {
-            state.currentUser = null;
-            localStorage.removeItem('currentUser');
-            
-            // Giriş ekranını göster
-            authSection.style.display = 'block';
-            sidebar.style.display = 'none';
-            userInfo.style.display = 'none';
-            
-            // Formları sıfırla
-            document.getElementById('login-username').value = '';
-            document.getElementById('login-password').value = '';
-            document.querySelector('[data-tab="login"]').click();
-            
-            // Bonus bildirimini gizle
-            bonusNotification.style.display = 'none';
-            
-            // Video modalını kapat
-            videoModal.style.display = 'none';
-            videoPlayer.src = '';
-        }
-        
-        // Enter tuşu ile giriş
-        document.getElementById('login-password').addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                document.getElementById('login-btn').click();
+        // FARE HAREKETİ İLE PARTİKÜL
+        document.addEventListener('mousemove', function(e) {
+            // Fare pozisyonunda partikül oluştur
+            if (Math.random() > 0.7) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${e.clientX}px`;
+                particle.style.top = `${e.clientY}px`;
+                particle.style.width = '5px';
+                particle.style.height = '5px';
+                particle.style.backgroundColor = '#ffffff';
+                particle.style.animationDuration = '1s';
+                
+                document.getElementById('particles').appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 1000);
             }
         });
         
-        document.getElementById('register-password-again').addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                document.getElementById('register-btn').click();
-            }
+        // TÜM SAYFA TIKLANDIĞINDA
+        document.body.addEventListener('click', function(e) {
+            // Tıklanan yerde küçük bir efekt
+            const clickEffect = document.createElement('div');
+            clickEffect.style.position = 'fixed';
+            clickEffect.style.left = `${e.clientX - 25}px`;
+            clickEffect.style.top = `${e.clientY - 25}px`;
+            clickEffect.style.width = '50px';
+            clickEffect.style.height = '50px';
+            clickEffect.style.borderRadius = '50%';
+            clickEffect.style.background = 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)';
+            clickEffect.style.zIndex = '100';
+            clickEffect.style.pointerEvents = 'none';
+            
+            document.body.appendChild(clickEffect);
+            
+            // Animasyon
+            clickEffect.animate([
+                { transform: 'scale(0.5)', opacity: 1 },
+                { transform: 'scale(2)', opacity: 0 }
+            ], {
+                duration: 500,
+                easing: 'ease-out'
+            });
+            
+            setTimeout(() => {
+                clickEffect.remove();
+            }, 500);
         });
+        
+        // SAYFA TİTREME EFEKTİ
+        function shakePage() {
+            document.body.style.animation = 'none';
+            setTimeout(() => {
+                document.body.style.transform = 'translateX(10px)';
+                setTimeout(() => {
+                    document.body.style.transform = 'translateX(-10px)';
+                    setTimeout(() => {
+                        document.body.style.transform = 'translateX(5px)';
+                        setTimeout(() => {
+                            document.body.style.transform = 'translateX(-5px)';
+                            setTimeout(() => {
+                                document.body.style.transform = 'translateX(0)';
+                                document.body.style.animation = 'gradientBG 15s ease infinite';
+                            }, 50);
+                        }, 50);
+                    }, 50);
+                }, 50);
+            }, 10);
+        }
+        
+        // RASTGELE SAYFA TİTREME
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                shakePage();
+            }
+        }, 10000);
     </script>
 </body>
 </html>
