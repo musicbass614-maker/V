@@ -108,43 +108,91 @@
             display: none;
         }
 
-        /* Video Container */
+        /* Video Container - GÜNCELLENDİ */
         .video-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 1;
             display: none;
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+            aspect-ratio: 16/9;
         }
 
         #mainVideo {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            border: 3px solid rgba(255, 152, 0, 0.3);
         }
 
-        /* Content Screen */
+        /* Content Screen - YENİ DÜZEN */
         .content-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(10,10,10,0.95) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(10,10,10,0.98) 100%);
             display: none;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             z-index: 2;
-            overflow: hidden;
+            overflow-y: auto;
+            padding: 20px;
         }
 
-        .content-wrapper {
+        /* ÜST KISIM - YAZILAR */
+        .top-content {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
+            width: 100%;
             max-width: 800px;
-            width: 90%;
+            margin-top: 30px;
+        }
+
+        /* ALT KISIM - 2. VIDEO */
+        .bottom-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .video2-container {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            aspect-ratio: 16/9;
+            position: relative;
+        }
+
+        #secondVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(233, 30, 99, 0.3);
+        }
+
+        /* Shake Animation için */
+        .video-shake {
+            animation: videoShake 2s infinite;
+        }
+
+        @keyframes videoShake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-5px) rotate(-0.5deg); }
+            75% { transform: translateX(5px) rotate(0.5deg); }
         }
 
         /* Animated Background */
@@ -168,10 +216,10 @@
             100% { transform: translateY(-1000px) rotate(720deg); }
         }
 
-        /* Titles */
+        /* Titles - GÜNCELLENDİ */
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             margin-bottom: 10px;
             background: linear-gradient(45deg, #FFFFFF, #FF9800);
@@ -180,69 +228,66 @@
             color: transparent;
             opacity: 0;
             transform: translateY(30px);
-            animation: titleFadeIn 1.2s forwards 0.3s;
+            animation: titleFadeIn 1s forwards 0.3s;
             letter-spacing: 1px;
             text-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
         }
 
         .subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
             color: #FF9800;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             opacity: 0;
             transform: translateY(20px);
-            animation: subtitleFadeIn 1s forwards 0.8s;
-            letter-spacing: 3px;
-            font-weight: 300;
+            animation: subtitleFadeIn 1s forwards 0.6s;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .designer-text {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: #4CAF50;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: designerFadeIn 1s forwards 0.9s;
+            font-weight: 700;
+        }
+
+        .zahir-baba-text {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: #2196F3;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: zahirBabaFadeIn 1s forwards 1.2s;
+            font-weight: 800;
+            text-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
         }
 
         .ismail-text {
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 700;
             color: #4CAF50;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             opacity: 0;
-            transform: translateY(30px);
-            animation: ismailFadeIn 1s forwards 1.3s;
+            transform: translateY(20px);
+            animation: ismailFadeIn 1s forwards 1.5s;
             text-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
         .quote-text {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
             font-style: italic;
-            color: #2196F3;
-            margin-bottom: 60px;
+            color: #E91E63;
+            margin-bottom: 40px;
             opacity: 0;
             transform: translateY(20px);
             animation: quoteFadeIn 1s forwards 1.8s;
-        }
-
-        .zahir-text {
-            font-size: clamp(1.8rem, 3.5vw, 3rem);
-            font-weight: 800;
-            color: #E91E63;
-            padding: 25px 50px;
-            border: 3px solid #E91E63;
-            border-radius: 15px;
-            display: inline-block;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: zahirFadeIn 1s forwards 2.3s;
-            position: relative;
-            overflow: hidden;
+            padding: 10px 20px;
             background: rgba(233, 30, 99, 0.1);
-            backdrop-filter: blur(5px);
-        }
-
-        .zahir-text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shine 3s infinite 2.5s;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         /* Animations */
@@ -254,6 +299,20 @@
         }
 
         @keyframes subtitleFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes designerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zahirBabaFadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -272,94 +331,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        @keyframes zahirFadeIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes shine {
-            to {
-                left: 100%;
-            }
-        }
-
-        /* Glitch Effect */
-        .glitch {
-            position: relative;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            animation: glitch-anim 0.3s infinite;
-            color: #FF9800;
-            z-index: -1;
-        }
-
-        .glitch::after {
-            animation: glitch-anim2 0.3s infinite;
-            color: #2196F3;
-            z-index: -2;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(42px, 9999px, 44px, 0); }
-            5% { clip: rect(12px, 9999px, 59px, 0); }
-            10% { clip: rect(48px, 9999px, 29px, 0); }
-            15% { clip: rect(42px, 9999px, 73px, 0); }
-            20% { clip: rect(63px, 9999px, 27px, 0); }
-            25% { clip: rect(34px, 9999px, 55px, 0); }
-            30% { clip: rect(86px, 9999px, 73px, 0); }
-            35% { clip: rect(20px, 9999px, 20px, 0); }
-            40% { clip: rect(26px, 9999px, 60px, 0); }
-            45% { clip: rect(25px, 9999px, 66px, 0); }
-            50% { clip: rect(57px, 9999px, 98px, 0); }
-            55% { clip: rect(5px, 9999px, 46px, 0); }
-            60% { clip: rect(82px, 9999px, 31px, 0); }
-            65% { clip: rect(54px, 9999px, 27px, 0); }
-            70% { clip: rect(28px, 9999px, 99px, 0); }
-            75% { clip: rect(45px, 9999px, 69px, 0); }
-            80% { clip: rect(23px, 9999px, 85px, 0); }
-            85% { clip: rect(54px, 9999px, 84px, 0); }
-            90% { clip: rect(45px, 9999px, 47px, 0); }
-            95% { clip: rect(37px, 9999px, 20px, 0); }
-            100% { clip: rect(4px, 9999px, 91px, 0); }
-        }
-
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 100px, 0); }
-            5% { clip: rect(52px, 9999px, 74px, 0); }
-            10% { clip: rect(79px, 9999px, 85px, 0); }
-            15% { clip: rect(75px, 9999px, 5px, 0); }
-            20% { clip: rect(67px, 9999px, 61px, 0); }
-            25% { clip: rect(14px, 9999px, 79px, 0); }
-            30% { clip: rect(1px, 9999px, 66px, 0); }
-            35% { clip: rect(86px, 9999px, 30px, 0); }
-            40% { clip: rect(23px, 9999px, 98px, 0); }
-            45% { clip: rect(85px, 9999px, 72px, 0); }
-            50% { clip: rect(71px, 9999px, 75px, 0); }
-            55% { clip: rect(2px, 9999px, 48px, 0); }
-            60% { clip: rect(30px, 9999px, 16px, 0); }
-            65% { clip: rect(59px, 9999px, 50px, 0); }
-            70% { clip: rect(41px, 9999px, 62px, 0); }
-            75% { clip: rect(2px, 9999px, 82px, 0); }
-            80% { clip: rect(47px, 9999px, 73px, 0); }
-            85% { clip: rect(3px, 9999px, 27px, 0); }
-            90% { clip: rect(40px, 9999px, 86px, 0); }
-            95% { clip: rect(45px, 9999px, 72px, 0); }
-            100% { clip: rect(23px, 9999px, 49px, 0); }
         }
 
         /* Progress Bar */
@@ -408,18 +379,49 @@
             font-size: 20px;
         }
 
+        /* Info Text for Video 2 */
+        .video-info {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #aaa;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .password-container {
                 padding: 30px 20px;
             }
             
-            .content-wrapper {
-                padding: 20px;
+            .top-content {
+                padding: 15px;
+                margin-top: 20px;
             }
             
-            .zahir-text {
-                padding: 20px 30px;
+            .video-container {
+                width: 95%;
+            }
+            
+            .video2-container {
+                width: 95%;
+            }
+            
+            .content-screen {
+                padding: 10px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .top-content {
+                margin-top: 10px;
+            }
+            
+            .main-title {
+                font-size: clamp(2rem, 4vw, 3rem);
             }
         }
     </style>
@@ -443,20 +445,31 @@
         </div>
     </div>
 
-    <!-- Video Container -->
+    <!-- Video 1 Container -->
     <div class="video-container" id="videoContainer">
         <video id="mainVideo" autoplay muted playsinline></video>
     </div>
 
-    <!-- Content Screen -->
+    <!-- Content Screen (Video 1 bittikten sonra) -->
     <div class="content-screen" id="contentScreen">
         <div class="animated-bg" id="animatedBg"></div>
-        <div class="content-wrapper">
-            <h1 class="main-title glitch" data-text="ZAHİR & İSMAİL">ZAHİR & İSMAİL</h1>
-            <p class="subtitle">TASARLAYAN</p>
+        
+        <!-- ÜST KISIM - YAZILAR -->
+        <div class="top-content">
+            <h1 class="main-title">ZAHİR & İSMAİL</h1>
+            <p class="subtitle">ÖZEL TASARIM</p>
+            <div class="designer-text">TASARLAYAN</div>
+            <div class="zahir-baba-text">ZAHİR BABA</div>
             <h2 class="ismail-text">İSMAİL ASLAN</h2>
             <p class="quote-text">DOSTUM</p>
-            <div class="zahir-text">ZAHİR</div>
+        </div>
+        
+        <!-- ALT KISIM - 2. VIDEO -->
+        <div class="bottom-content">
+            <div class="video2-container">
+                <video id="secondVideo" autoplay loop muted playsinline></video>
+                <div class="video-info">2. Video - Animasyonlu Gösterim</div>
+            </div>
         </div>
     </div>
 
@@ -476,6 +489,7 @@
         let currentVideo = 1;
         let isMuted = true;
         let particles = [];
+        let shakeInterval;
 
         // DOM Elements
         const passwordScreen = document.getElementById('passwordScreen');
@@ -484,6 +498,7 @@
         const videoContainer = document.getElementById('videoContainer');
         const mainVideo = document.getElementById('mainVideo');
         const contentScreen = document.getElementById('contentScreen');
+        const secondVideo = document.getElementById('secondVideo');
         const progressContainer = document.getElementById('progressContainer');
         const progressBar = document.getElementById('progressBar');
         const soundControl = document.getElementById('soundControl');
@@ -573,48 +588,45 @@
             
             // Video error handling
             mainVideo.onerror = function() {
+                // If video error, show content directly
                 showContent();
             };
         }
 
-        // Show Content Screen
+        // Show Content Screen (2. video HEMEN gelsin)
         function showContent() {
             contentScreen.style.display = 'flex';
             
-            // Start second video after 5 seconds
-            setTimeout(() => {
-                contentScreen.style.display = 'none';
-                playVideo2();
-            }, 5000);
+            // HEMEN 2. videoyu başlat (beklemeden)
+            playVideo2();
         }
 
-        // Play Video 2
+        // Play Video 2 with shake effect
         function playVideo2() {
-            currentVideo = 2;
-            mainVideo.src = 'video2.mp4'; // Change to your video file
-            videoContainer.style.display = 'block';
-            progressContainer.style.display = 'block';
+            secondVideo.src = 'video2.mp4'; // Change to your video file
+            secondVideo.loop = true;
+            secondVideo.play();
             
-            mainVideo.play();
-            
-            // Update progress bar
-            mainVideo.ontimeupdate = function() {
-                const progress = (mainVideo.currentTime / mainVideo.duration) * 100;
-                progressBar.style.width = progress + '%';
-            };
-            
-            // When video 2 ends
-            mainVideo.onended = function() {
-                restartApp();
-            };
-            
-            // Video error handling
-            mainVideo.onerror = function() {
-                restartApp();
-            };
+            // Hemen shake efektini başlat
+            startShakeEffect();
         }
 
-        // Toggle Sound
+        // Start shake effect for video 2
+        function startShakeEffect() {
+            const videoContainer = document.querySelector('.video2-container');
+            
+            // Her 2 saniyede bir shake efekti
+            shakeInterval = setInterval(() => {
+                videoContainer.classList.add('video-shake');
+                
+                // 0.3 saniye sonra shake'i kaldır
+                setTimeout(() => {
+                    videoContainer.classList.remove('video-shake');
+                }, 300);
+            }, 2000); // 2 saniyede bir
+        }
+
+        // Toggle Sound (sadece video 1 için)
         function toggleSound() {
             isMuted = !isMuted;
             mainVideo.muted = isMuted;
@@ -623,6 +635,11 @@
 
         // Restart Application
         function restartApp() {
+            // Clear shake interval
+            if (shakeInterval) {
+                clearInterval(shakeInterval);
+            }
+            
             // Fade out everything
             videoContainer.style.opacity = '0';
             contentScreen.style.opacity = '0';
@@ -646,6 +663,10 @@
                 particles.forEach(p => p.remove());
                 particles = [];
                 
+                // Stop second video
+                secondVideo.pause();
+                secondVideo.src = '';
+                
                 // Restart
                 startApp();
             }, 1000);
@@ -658,13 +679,19 @@
             }
         });
 
-        // Add shake animation
+        // Add shake animation for password input
         const style = document.createElement('style');
         style.textContent = `
             @keyframes shake {
                 0%, 100% {transform: translateX(0);}
                 10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
                 20%, 40%, 60%, 80% {transform: translateX(5px);}
+            }
+            
+            @keyframes videoShake {
+                0%, 100% { transform: translateX(0) rotate(0deg); }
+                25% { transform: translateX(-5px) rotate(-0.5deg); }
+                75% { transform: translateX(5px) rotate(0.5deg); }
             }
         `;
         document.head.appendChild(style);
