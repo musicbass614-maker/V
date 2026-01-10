@@ -108,7 +108,7 @@
             display: none;
         }
 
-        /* Video Container - GÜNCELLENDİ */
+        /* Video Container - DAHA BÜYÜK */
         .video-container {
             position: fixed;
             top: 50%;
@@ -116,8 +116,8 @@
             transform: translate(-50%, -50%);
             z-index: 1;
             display: none;
-            width: 90%;
-            max-width: 800px;
+            width: 95%;
+            max-width: 1000px;
             height: auto;
             aspect-ratio: 16/9;
         }
@@ -126,12 +126,12 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-            border: 3px solid rgba(255, 152, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+            border: 3px solid rgba(255, 152, 0, 0.4);
         }
 
-        /* Content Screen - YENİ DÜZEN */
+        /* Content Screen */
         .content-screen {
             position: fixed;
             top: 0;
@@ -153,11 +153,11 @@
             text-align: center;
             padding: 20px;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin-top: 30px;
         }
 
-        /* ALT KISIM - 2. VIDEO */
+        /* ALT KISIM - 2. VIDEO (DAHA BÜYÜK) */
         .bottom-content {
             flex: 1;
             display: flex;
@@ -168,8 +168,8 @@
         }
 
         .video2-container {
-            width: 80%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 900px;
             height: auto;
             aspect-ratio: 16/9;
             position: relative;
@@ -180,8 +180,8 @@
             height: 100%;
             object-fit: contain;
             border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(233, 30, 99, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+            border: 3px solid rgba(233, 30, 99, 0.4);
         }
 
         /* Shake Animation için */
@@ -191,8 +191,8 @@
 
         @keyframes videoShake {
             0%, 100% { transform: translateX(0) rotate(0deg); }
-            25% { transform: translateX(-5px) rotate(-0.5deg); }
-            75% { transform: translateX(5px) rotate(0.5deg); }
+            25% { transform: translateX(-8px) rotate(-0.8deg); }
+            75% { transform: translateX(8px) rotate(0.8deg); }
         }
 
         /* Animated Background */
@@ -219,9 +219,9 @@
         /* Titles - GÜNCELLENDİ */
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(3rem, 6vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             background: linear-gradient(45deg, #FFFFFF, #FF9800);
             -webkit-background-clip: text;
             background-clip: text;
@@ -233,72 +233,54 @@
             text-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
         }
 
-        .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
-            color: #FF9800;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: subtitleFadeIn 1s forwards 0.6s;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
         .designer-text {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             color: #4CAF50;
             margin-bottom: 15px;
             opacity: 0;
             transform: translateY(20px);
-            animation: designerFadeIn 1s forwards 0.9s;
+            animation: designerFadeIn 1s forwards 0.6s;
             font-weight: 700;
         }
 
         .zahir-baba-text {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             color: #2196F3;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             opacity: 0;
             transform: translateY(20px);
-            animation: zahirBabaFadeIn 1s forwards 1.2s;
+            animation: zahirBabaFadeIn 1s forwards 0.9s;
             font-weight: 800;
             text-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
         }
 
         .ismail-text {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             color: #4CAF50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             opacity: 0;
             transform: translateY(20px);
-            animation: ismailFadeIn 1s forwards 1.5s;
+            animation: ismailFadeIn 1s forwards 1.2s;
             text-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
         .quote-text {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-style: italic;
             color: #E91E63;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             opacity: 0;
             transform: translateY(20px);
-            animation: quoteFadeIn 1s forwards 1.8s;
-            padding: 10px 20px;
+            animation: quoteFadeIn 1s forwards 1.5s;
+            padding: 15px 30px;
             background: rgba(233, 30, 99, 0.1);
-            border-radius: 10px;
+            border-radius: 15px;
             display: inline-block;
         }
 
         /* Animations */
         @keyframes titleFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes subtitleFadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -340,10 +322,10 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
-            max-width: 400px;
-            height: 4px;
+            max-width: 500px;
+            height: 5px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
+            border-radius: 3px;
             overflow: hidden;
             display: none;
             z-index: 10;
@@ -354,41 +336,6 @@
             width: 0%;
             background: linear-gradient(90deg, #FF9800, #E91E63);
             transition: width 0.3s;
-        }
-
-        /* Sound Control */
-        .sound-control {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: none;
-        }
-
-        .sound-control i {
-            color: white;
-            font-size: 20px;
-        }
-
-        /* Info Text for Video 2 */
-        .video-info {
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: #aaa;
-            font-size: 14px;
-            opacity: 0.7;
         }
 
         /* Responsive */
@@ -403,15 +350,25 @@
             }
             
             .video-container {
-                width: 95%;
+                width: 98%;
+                max-width: 95%;
             }
             
             .video2-container {
-                width: 95%;
+                width: 98%;
+                max-width: 95%;
             }
             
             .content-screen {
                 padding: 10px;
+            }
+            
+            .main-title {
+                font-size: clamp(2.2rem, 5vw, 3.5rem);
+            }
+            
+            .ismail-text, .zahir-baba-text {
+                font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             }
         }
 
@@ -421,7 +378,12 @@
             }
             
             .main-title {
-                font-size: clamp(2rem, 4vw, 3rem);
+                font-size: clamp(2.5rem, 5vw, 3.5rem);
+                margin-bottom: 10px;
+            }
+            
+            .quote-text {
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -447,7 +409,7 @@
 
     <!-- Video 1 Container -->
     <div class="video-container" id="videoContainer">
-        <video id="mainVideo" autoplay muted playsinline></video>
+        <video id="mainVideo" autoplay playsinline></video>
     </div>
 
     <!-- Content Screen (Video 1 bittikten sonra) -->
@@ -457,7 +419,6 @@
         <!-- ÜST KISIM - YAZILAR -->
         <div class="top-content">
             <h1 class="main-title">ZAHİR & İSMAİL</h1>
-            <p class="subtitle">ÖZEL TASARIM</p>
             <div class="designer-text">TASARLAYAN</div>
             <div class="zahir-baba-text">ZAHİR BABA</div>
             <h2 class="ismail-text">İSMAİL ASLAN</h2>
@@ -467,8 +428,7 @@
         <!-- ALT KISIM - 2. VIDEO -->
         <div class="bottom-content">
             <div class="video2-container">
-                <video id="secondVideo" autoplay loop muted playsinline></video>
-                <div class="video-info">2. Video - Animasyonlu Gösterim</div>
+                <video id="secondVideo" autoplay loop playsinline></video>
             </div>
         </div>
     </div>
@@ -478,16 +438,10 @@
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <!-- Sound Control -->
-    <div class="sound-control" id="soundControl" onclick="toggleSound()">
-        <i class="fas fa-volume-mute" id="soundIcon"></i>
-    </div>
-
     <script>
         // Variables
         const PASSWORD = "zahirXiso";
         let currentVideo = 1;
-        let isMuted = true;
         let particles = [];
         let shakeInterval;
 
@@ -501,8 +455,6 @@
         const secondVideo = document.getElementById('secondVideo');
         const progressContainer = document.getElementById('progressContainer');
         const progressBar = document.getElementById('progressBar');
-        const soundControl = document.getElementById('soundControl');
-        const soundIcon = document.getElementById('soundIcon');
         const animatedBg = document.getElementById('animatedBg');
 
         // Create particles for background
@@ -563,13 +515,16 @@
             playVideo1();
         }
 
-        // Play Video 1
+        // Play Video 1 - SES AÇIK
         function playVideo1() {
             currentVideo = 1;
             mainVideo.src = 'video1.mp4'; // Change to your video file
             videoContainer.style.display = 'block';
             progressContainer.style.display = 'block';
-            soundControl.style.display = 'flex';
+            
+            // SESİ AÇ
+            mainVideo.muted = false;
+            mainVideo.volume = 1.0;
             
             mainVideo.play();
             
@@ -601,9 +556,14 @@
             playVideo2();
         }
 
-        // Play Video 2 with shake effect
+        // Play Video 2 with shake effect - SES AÇIK
         function playVideo2() {
             secondVideo.src = 'video2.mp4'; // Change to your video file
+            
+            // SESİ AÇ
+            secondVideo.muted = false;
+            secondVideo.volume = 1.0;
+            
             secondVideo.loop = true;
             secondVideo.play();
             
@@ -626,13 +586,6 @@
             }, 2000); // 2 saniyede bir
         }
 
-        // Toggle Sound (sadece video 1 için)
-        function toggleSound() {
-            isMuted = !isMuted;
-            mainVideo.muted = isMuted;
-            soundIcon.className = isMuted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-        }
-
         // Restart Application
         function restartApp() {
             // Clear shake interval
@@ -644,20 +597,17 @@
             videoContainer.style.opacity = '0';
             contentScreen.style.opacity = '0';
             progressContainer.style.opacity = '0';
-            soundControl.style.opacity = '0';
             
             setTimeout(() => {
                 // Reset everything
                 videoContainer.style.display = 'none';
                 contentScreen.style.display = 'none';
                 progressContainer.style.display = 'none';
-                soundControl.style.display = 'none';
                 
                 // Reset opacity
                 videoContainer.style.opacity = '1';
                 contentScreen.style.opacity = '1';
                 progressContainer.style.opacity = '1';
-                soundControl.style.opacity = '1';
                 
                 // Clear particles
                 particles.forEach(p => p.remove());
@@ -690,8 +640,8 @@
             
             @keyframes videoShake {
                 0%, 100% { transform: translateX(0) rotate(0deg); }
-                25% { transform: translateX(-5px) rotate(-0.5deg); }
-                75% { transform: translateX(5px) rotate(0.5deg); }
+                25% { transform: translateX(-8px) rotate(-0.8deg); }
+                75% { transform: translateX(8px) rotate(0.8deg); }
             }
         `;
         document.head.appendChild(style);
@@ -700,6 +650,16 @@
         window.onload = function() {
             passwordInput.focus();
         };
+
+        // Browser autoplay policy için
+        document.addEventListener('click', function() {
+            if (mainVideo.paused && videoContainer.style.display === 'block') {
+                mainVideo.play().catch(e => console.log("Autoplay prevented:", e));
+            }
+            if (secondVideo.paused && contentScreen.style.display === 'flex') {
+                secondVideo.play().catch(e => console.log("Autoplay prevented:", e));
+            }
+        });
     </script>
 </body>
 </html>
