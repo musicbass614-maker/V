@@ -4,46 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAHIR FUCKING ISO</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #000;
-            color: white;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Video Container - Tam ekran ve ortalanmış */
-        .video-container {
-            position: relative;
+        html, body {
             width: 100%;
             height: 100%;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+        }
+
+        /* KASMA ENGELLEYİCİ - PERFORMANS OPTİMİZASYONU */
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
+        }
+
+        /* Video Container - Tam ekran siyah */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #000;
+            z-index: 1;
+            transform: translateZ(0);
         }
 
         #mainVideo {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+            object-fit: cover; /* 'contain' yerine 'cover' - tam ekran, boşluk kalmasın */
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         
-        /* Video Overlay - ZAHIR FUCKING ISO YAZISI */
+        /* Video Overlay - İSMAİLİ ZAHİR SİKTİ yazısı */
         .video-overlay {
             position: absolute;
             top: 0;
@@ -54,137 +77,174 @@
             justify-content: center;
             align-items: center;
             pointer-events: none;
-            z-index: 5;
+            z-index: 10;
+            transform: translateZ(0);
+            background: transparent;
         }
         
         .overlay-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 12vw, 8rem);
+            font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+            font-size: clamp(2.5rem, 15vw, 10rem);
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 0 30px rgba(255, 152, 0, 0.9), 
-                         0 0 60px rgba(255, 87, 34, 0.7),
-                         0 0 90px rgba(233, 30, 99, 0.5),
-                         4px 4px 8px rgba(0,0,0,0.8);
-            letter-spacing: 8px;
+            color: #FF0000;
+            text-shadow: 
+                0 0 20px #FF0000,
+                0 0 40px #FF3300,
+                0 0 60px #FF6600,
+                0 0 80px #FF9900,
+                4px 4px 0 #000,
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+            letter-spacing: 4px;
             transform: rotate(-5deg) scale(1);
-            animation: textPulse 2.5s infinite alternate;
+            animation: textPulse 1.5s infinite alternate;
             white-space: nowrap;
-            background: linear-gradient(135deg, #FFF, #FF9800, #FF5722, #E91E63);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            -webkit-text-stroke: 3px rgba(0,0,0,0.6);
             text-align: center;
             line-height: 1.2;
             padding: 20px;
+            -webkit-text-stroke: 3px black;
+            text-stroke: 3px black;
+            will-change: transform, text-shadow;
         }
         
         @keyframes textPulse {
             0% { 
                 transform: rotate(-5deg) scale(1); 
-                text-shadow: 0 0 30px rgba(255,152,0,0.9), 0 0 60px rgba(255,87,34,0.5);
-                letter-spacing: 8px;
+                text-shadow: 0 0 20px #FF0000, 0 0 40px #FF3300, 4px 4px 0 #000;
             }
             100% { 
                 transform: rotate(-3deg) scale(1.1); 
-                text-shadow: 0 0 50px rgba(255,87,34,1), 0 0 90px rgba(233,30,99,0.8), 0 0 120px rgba(255,152,0,0.9);
-                letter-spacing: 12px;
+                text-shadow: 0 0 40px #FF3300, 0 0 80px #FF6600, 0 0 120px #FF9900, 4px 4px 0 #000;
             }
         }
 
-        /* Progress Bar - İsteğe bağlı, istersen kaldırabilirsin */
+        /* Progress Bar - Daha ince ve göze batmayan */
         .progress-container {
             position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            max-width: 600px;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 3px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 2px;
             overflow: hidden;
-            z-index: 10;
-            border: 1px solid rgba(255, 152, 0, 0.3);
+            z-index: 20;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .progress-container:hover {
+            opacity: 1;
         }
 
         .progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #FF9800, #E91E63, #FF5722);
-            transition: width 0.3s;
-            box-shadow: 0 0 20px #FF9800;
+            background: linear-gradient(90deg, #FF0000, #FF6600, #FF9900);
+            transition: width 0.2s linear;
+            box-shadow: 0 0 15px #FF0000;
+        }
+
+        /* Kapatma, indirme, sağ tık engelleyici */
+        .blocker-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: transparent;
+            pointer-events: none; /* Tıklamaları videoya iletiyoruz */
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .overlay-text {
-                font-size: clamp(2rem, 8vw, 4rem);
-                letter-spacing: 4px;
-                -webkit-text-stroke: 2px rgba(0,0,0,0.6);
+                font-size: clamp(2rem, 12vw, 6rem);
+                letter-spacing: 2px;
+                -webkit-text-stroke: 2px black;
             }
             
             @keyframes textPulse {
-                0% { transform: rotate(-5deg) scale(1); letter-spacing: 4px; }
-                100% { transform: rotate(-3deg) scale(1.05); letter-spacing: 6px; }
+                0% { transform: rotate(-5deg) scale(1); letter-spacing: 2px; }
+                100% { transform: rotate(-3deg) scale(1.05); letter-spacing: 3px; }
             }
         }
 
         @media (max-width: 480px) {
             .overlay-text {
-                font-size: clamp(1.8rem, 7vw, 3rem);
+                font-size: clamp(1.8rem, 10vw, 4rem);
                 white-space: normal;
                 word-break: break-word;
                 line-height: 1.3;
+                -webkit-text-stroke: 2px black;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Sadece Video Container - Şifre ekranı ve diğer videolar kaldırıldı -->
+    <!-- Blocker Overlay - Sağ tık, kapatma, indirme engelleyici -->
+    <div class="blocker-overlay" id="blockerOverlay"></div>
+
+    <!-- Sadece Video Container -->
     <div class="video-container" id="videoContainer">
-        <video id="mainVideo" autoplay playsinline></video>
-        <!-- ZAHIR FUCKING ISO Overlay - Her zaman görünecek -->
+        <video id="mainVideo" autoplay playsinline preload="auto"></video>
+        <!-- İSMAİLİ ZAHİR SİKTİ Overlay - Her zaman görünecek -->
         <div class="video-overlay">
-            <div class="overlay-text">ZAHIR FUCKING ISO</div>
+            <div class="overlay-text">İSMAİLİ ZAHİR SİKTİ</div>
         </div>
     </div>
 
-    <!-- Progress Bar (İsteğe bağlı, istersen burayı da silebilirsin) -->
+    <!-- Progress Bar -->
     <div class="progress-container" id="progressContainer">
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
     <script>
-        // DOM Elements
-        const mainVideo = document.getElementById('mainVideo');
-        const progressBar = document.getElementById('progressBar');
-        const progressContainer = document.getElementById('progressContainer');
-
-        // Video kaynağını ayarla ve oynat
-        function initVideo() {
-            // Video dosyasının adı - kendi video dosyanın adını buraya yaz
-            mainVideo.src = 'video1.mp4'; // Değiştir: video dosyanın adı
+        (function() {
+            "use strict";
             
-            // SESİ AÇ - MUTED KALDIRILDI
+            // DOM ELEMANLARI
+            const mainVideo = document.getElementById('mainVideo');
+            const progressBar = document.getElementById('progressBar');
+            
+            // PERFORMANS AYARLARI - Kasmayı önle
+            // Video elementine optimize edici özellikler ekle
+            mainVideo.setAttribute('playsinline', '');
+            mainVideo.setAttribute('webkit-playsinline', '');
+            mainVideo.setAttribute('x5-playsinline', '');
+            mainVideo.setAttribute('preload', 'auto');
+            
+            // Video kaynağını hemen ayarla
+            mainVideo.src = 'video1.mp4'; // Video dosyanın adı
+            
+            // SES AYARLARI
             mainVideo.muted = false;
             mainVideo.volume = 1.0;
             
-            // Loop özelliğini kaldır (videonun bitmesini istiyorsan loop'u kaldır, sonsuz dönsün istiyorsan true yap)
-            mainVideo.loop = false; // false yaparsan video bitince durur, true yaparsan sürekli döner
+            // KALICI OYNATMA - Sayfa yüklenir yüklenmez başlasın
+            function forcePlay() {
+                mainVideo.play()
+                    .then(() => {
+                        console.log('Video oynuyor');
+                        // Başarılı
+                    })
+                    .catch(e => {
+                        console.log('Hata:', e);
+                        // Hata olursa tekrar dene
+                        setTimeout(forcePlay, 100);
+                    });
+            }
             
-            // Otomatik oynatmayı dene
-            mainVideo.play().catch(e => {
-                console.log("Otomatik oynatma engellendi:", e);
-                // Otomatik oynatma engellenirse, kullanıcı herhangi bir yere tıklayınca oynat
-                document.addEventListener('click', function playOnClick() {
-                    mainVideo.play();
-                    document.removeEventListener('click', playOnClick);
-                }, { once: true });
-            });
+            // HEMEN BAŞLAT (bekleme yok)
+            forcePlay();
             
-            // Progress bar'ı güncelle
+            // Progress bar güncelleme
             mainVideo.ontimeupdate = function() {
                 if (mainVideo.duration) {
                     const progress = (mainVideo.currentTime / mainVideo.duration) * 100;
@@ -192,34 +252,160 @@
                 }
             };
             
-            // Video bittiğinde ne yapılacağı
+            // Video bittiğinde başa sar ve tekrar oynat (sonsuz döngü)
             mainVideo.onended = function() {
-                console.log("Video bitti");
-                // İstersen buraya video bittiğinde yapılacak bir şey ekleyebilirsin
-                // Örneğin: mainVideo.currentTime = 0; mainVideo.play(); (başa sarıp tekrar oynat)
-                // Ama loop özelliğini true yaparsan zaten sürekli döner
+                mainVideo.currentTime = 0;
+                mainVideo.play().catch(e => console.log('Tekrar oynatılamadı:', e));
             };
             
-            // Hata durumunda
+            // Hata durumunda tekrar dene
             mainVideo.onerror = function(e) {
-                console.error("Video yüklenirken hata oluştu:", e);
-                // Video yüklenemezse ekrana bir uyarı yazdırabilirsin
-                document.body.innerHTML += '<div style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:red; padding:20px; border-radius:10px; z-index:1000;">Video yüklenemedi! Dosya adını kontrol et: video1.mp4</div>';
+                console.error('Video hatası:', e);
+                // 1 saniye sonra tekrar dene
+                setTimeout(() => {
+                    mainVideo.load();
+                    mainVideo.play().catch(console.log);
+                }, 1000);
             };
-        }
-
-        // Sayfa yüklendiğinde videoyu başlat
-        window.onload = function() {
-            initVideo();
-        };
-
-        // Tarayıcı otomatik oynatma politikaları için ekstra yardım
-        // Kullanıcı sayfaya tıkladığında videoyu oynatmayı dene (çalışmazsa)
-        document.body.addEventListener('click', function() {
-            if (mainVideo.paused) {
-                mainVideo.play().catch(e => console.log("Hala oynatılamıyor:", e));
+            
+            // TÜM ENGELLEMELER
+            // Sağ tık engelle
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            // Klavye kısayollarını engelle (F11 hariç - tam ekran)
+            document.addEventListener('keydown', function(e) {
+                // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+C vb. engelle
+                if (
+                    e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                    (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+                    (e.ctrlKey && e.key === 'u') || 
+                    (e.ctrlKey && e.key === 's') || 
+                    (e.ctrlKey && e.key === 'c') ||
+                    (e.ctrlKey && e.key === 'U') ||
+                    (e.ctrlKey && e.key === 'S') ||
+                    (e.ctrlKey && e.key === 'C') ||
+                    e.key === 'PrintScreen' ||
+                    e.key === 'F11' // F11'i engelleme (tam ekran için gerekli olabilir)
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Ctrl+P (yazdır), Ctrl+F (ara) engelle
+                if (e.ctrlKey && (e.key === 'p' || e.key === 'P' || e.key === 'f' || e.key === 'F')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            // Dokunmatik cihazlarda uzun basma menüsünü engelle
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
+            document.addEventListener('gesturestart', function(e) {
+                e.preventDefault();
+            });
+            
+            // Seçmeyi engelle
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+            
+            // Sürüklemeyi engelle
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+            
+            // Kopyalamayı engelle
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+            });
+            
+            // Kesmeyi engelle
+            document.addEventListener('cut', function(e) {
+                e.preventDefault();
+            });
+            
+            // Yapıştırmayı engelle
+            document.addEventListener('paste', function(e) {
+                e.preventDefault();
+            });
+            
+            // Sayfa görünürlük değiştiğinde videoyu oynatmaya devam et
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    // Sayfa gizliyse bir şey yapma
+                } else {
+                    // Sayfa tekrar görünür olduğunda videoyu oynat
+                    mainVideo.play().catch(e => console.log('Tekrar oynatılamadı:', e));
+                }
+            });
+            
+            // Kullanıcı sayfadan ayrılmaya çalışırsa uyarı
+            window.addEventListener('beforeunload', function(e) {
+                // Bazı tarayıcılar özel mesaja izin vermez
+                e.preventDefault();
+                e.returnValue = '';
+            });
+            
+            // Ekranı sürekli açık tutmaya çalış (Wake Lock API)
+            if ('wakeLock' in navigator) {
+                let wakeLock = null;
+                
+                async function requestWakeLock() {
+                    try {
+                        wakeLock = await navigator.wakeLock.request('screen');
+                        wakeLock.addEventListener('release', () => {
+                            console.log('Wake Lock serbest bırakıldı');
+                        });
+                        console.log('Wake Lock aktif');
+                    } catch (err) {
+                        console.log('Wake Lock hatası:', err);
+                    }
+                }
+                
+                requestWakeLock();
+                
+                // Sayfa görünürlük değiştiğinde wake lock'u yenile
+                document.addEventListener('visibilitychange', async () => {
+                    if (wakeLock !== null && document.visibilityState === 'visible') {
+                        await requestWakeLock();
+                    }
+                });
             }
-        }, { once: true }); // Sadece bir kere çalışsın
+            
+            // Video her zaman oynasın, duraklatılamasın (kullanıcı duraklatırsa hemen başlat)
+            mainVideo.addEventListener('pause', function() {
+                setTimeout(() => {
+                    mainVideo.play().catch(e => console.log('Duraklatma engellendi:', e));
+                }, 10);
+            });
+            
+            // Video yeterli veriye sahip değilse bekleme
+            mainVideo.addEventListener('waiting', function() {
+                console.log('Video bekliyor...');
+            });
+            
+            // Performans için
+            window.addEventListener('load', function() {
+                // Tarayıcı belleğini temizleme komutu yok ama garbage collection'ı teşvik et
+                if (window.gc) {
+                    window.gc();
+                }
+            });
+            
+            // Pencere boyutu değiştiğinde yeniden boyutlandırma
+            window.addEventListener('resize', function() {
+                // İşlem yapmaya gerek yok, CSS hallediyor
+            });
+        })();
     </script>
 </body>
 </html>
