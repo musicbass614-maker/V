@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAHİR & İSMAİL</title>
+    <title>ZAHIR FUCKING ISO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,646 +20,206 @@
             color: white;
             overflow: hidden;
             height: 100vh;
-        }
-
-        /* Password Screen */
-        .password-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            transition: opacity 0.5s;
         }
 
-        .password-container {
-            background: rgba(20, 20, 20, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .password-container h2 {
-            color: #FF9800;
-            margin-bottom: 15px;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .password-container p {
-            color: #aaa;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .password-input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-            text-align: center;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-        }
-
-        .password-input:focus {
-            outline: none;
-            border-color: #FF9800;
-            box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
-        }
-
-        .password-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #FF9800, #FF5722);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .password-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
-        }
-
-        .error-message {
-            color: #ff4444;
-            margin-top: 15px;
-            font-size: 14px;
-            display: none;
-        }
-
-        /* Video Container - DAHA BÜYÜK */
+        /* Video Container - Tam ekran ve ortalanmış */
         .video-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            display: none;
-            width: 95%;
-            max-width: 1000px;
-            height: auto;
-            aspect-ratio: 16/9;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
         }
 
         #mainVideo {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 10px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
-            border: 3px solid rgba(255, 152, 0, 0.4);
         }
-
-        /* Content Screen */
-        .content-screen {
-            position: fixed;
+        
+        /* Video Overlay - ZAHIR FUCKING ISO YAZISI */
+        .video-overlay {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(10,10,10,0.98) 100%);
-            display: none;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            z-index: 2;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        /* ÜST KISIM - YAZILAR */
-        .top-content {
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 30px;
-        }
-
-        /* ALT KISIM - 2. VIDEO (DAHA BÜYÜK) */
-        .bottom-content {
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            padding: 20px;
+            pointer-events: none;
+            z-index: 5;
         }
-
-        .video2-container {
-            width: 90%;
-            max-width: 900px;
-            height: auto;
-            aspect-ratio: 16/9;
-            position: relative;
-        }
-
-        #secondVideo {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
-            border: 3px solid rgba(233, 30, 99, 0.4);
-        }
-
-        /* Shake Animation için */
-        .video-shake {
-            animation: videoShake 2s infinite;
-        }
-
-        @keyframes videoShake {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            25% { transform: translateX(-8px) rotate(-0.8deg); }
-            75% { transform: translateX(8px) rotate(0.8deg); }
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 152, 0, 0.2);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-1000px) rotate(720deg); }
-        }
-
-        /* Titles - GÜNCELLENDİ */
-        .main-title {
+        
+        .overlay-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, #FFFFFF, #FF9800);
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 30px rgba(255, 152, 0, 0.9), 
+                         0 0 60px rgba(255, 87, 34, 0.7),
+                         0 0 90px rgba(233, 30, 99, 0.5),
+                         4px 4px 8px rgba(0,0,0,0.8);
+            letter-spacing: 8px;
+            transform: rotate(-5deg) scale(1);
+            animation: textPulse 2.5s infinite alternate;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #FFF, #FF9800, #FF5722, #E91E63);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: titleFadeIn 1s forwards 0.3s;
-            letter-spacing: 1px;
-            text-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+            -webkit-text-stroke: 3px rgba(0,0,0,0.6);
+            text-align: center;
+            line-height: 1.2;
+            padding: 20px;
         }
-
-        .designer-text {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            color: #4CAF50;
-            margin-bottom: 15px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: designerFadeIn 1s forwards 0.6s;
-            font-weight: 700;
-        }
-
-        .zahir-baba-text {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: #2196F3;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: zahirBabaFadeIn 1s forwards 0.9s;
-            font-weight: 800;
-            text-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
-        }
-
-        .ismail-text {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: #4CAF50;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: ismailFadeIn 1s forwards 1.2s;
-            text-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .quote-text {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            font-style: italic;
-            color: #E91E63;
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: quoteFadeIn 1s forwards 1.5s;
-            padding: 15px 30px;
-            background: rgba(233, 30, 99, 0.1);
-            border-radius: 15px;
-            display: inline-block;
-        }
-
-        /* Animations */
-        @keyframes titleFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        
+        @keyframes textPulse {
+            0% { 
+                transform: rotate(-5deg) scale(1); 
+                text-shadow: 0 0 30px rgba(255,152,0,0.9), 0 0 60px rgba(255,87,34,0.5);
+                letter-spacing: 8px;
+            }
+            100% { 
+                transform: rotate(-3deg) scale(1.1); 
+                text-shadow: 0 0 50px rgba(255,87,34,1), 0 0 90px rgba(233,30,99,0.8), 0 0 120px rgba(255,152,0,0.9);
+                letter-spacing: 12px;
             }
         }
 
-        @keyframes designerFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes zahirBabaFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes ismailFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes quoteFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Progress Bar */
+        /* Progress Bar - İsteğe bağlı, istersen kaldırabilirsin */
         .progress-container {
             position: fixed;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
-            max-width: 500px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 3px;
             overflow: hidden;
-            display: none;
             z-index: 10;
+            border: 1px solid rgba(255, 152, 0, 0.3);
         }
 
         .progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #FF9800, #E91E63);
+            background: linear-gradient(90deg, #FF9800, #E91E63, #FF5722);
             transition: width 0.3s;
+            box-shadow: 0 0 20px #FF9800;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .password-container {
-                padding: 30px 20px;
+            .overlay-text {
+                font-size: clamp(2rem, 8vw, 4rem);
+                letter-spacing: 4px;
+                -webkit-text-stroke: 2px rgba(0,0,0,0.6);
             }
             
-            .top-content {
-                padding: 15px;
-                margin-top: 20px;
-            }
-            
-            .video-container {
-                width: 98%;
-                max-width: 95%;
-            }
-            
-            .video2-container {
-                width: 98%;
-                max-width: 95%;
-            }
-            
-            .content-screen {
-                padding: 10px;
-            }
-            
-            .main-title {
-                font-size: clamp(2.2rem, 5vw, 3.5rem);
-            }
-            
-            .ismail-text, .zahir-baba-text {
-                font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            @keyframes textPulse {
+                0% { transform: rotate(-5deg) scale(1); letter-spacing: 4px; }
+                100% { transform: rotate(-3deg) scale(1.05); letter-spacing: 6px; }
             }
         }
 
-        @media (max-height: 700px) {
-            .top-content {
-                margin-top: 10px;
-            }
-            
-            .main-title {
-                font-size: clamp(2.5rem, 5vw, 3.5rem);
-                margin-bottom: 10px;
-            }
-            
-            .quote-text {
-                margin-bottom: 30px;
+        @media (max-width: 480px) {
+            .overlay-text {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+                white-space: normal;
+                word-break: break-word;
+                line-height: 1.3;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Password Screen -->
-    <div class="password-screen" id="passwordScreen">
-        <div class="password-container">
-            <h2><i class="fas fa-lock"></i> GİRİŞ ŞİFRESİ</h2>
-            <p>Sadece bilenler girebilir. Şifreyi giriniz:</p>
-            <input type="password" class="password-input" id="passwordInput" placeholder="şifre" autocomplete="off">
-            <button class="password-btn" onclick="checkPassword()">
-                <i class="fas fa-sign-in-alt"></i> GİRİŞ YAP
-            </button>
-            <button class="password-btn" onclick="exitApp()" style="background: linear-gradient(45deg, #666, #333);">
-                <i class="fas fa-sign-out-alt"></i> ÇIKIŞ
-            </button>
-            <div class="error-message" id="errorMessage">
-                <i class="fas fa-exclamation-circle"></i> Yanlış şifre! Sadece bilenler girebilir.
-            </div>
-        </div>
-    </div>
-
-    <!-- Video 1 Container -->
+    <!-- Sadece Video Container - Şifre ekranı ve diğer videolar kaldırıldı -->
     <div class="video-container" id="videoContainer">
         <video id="mainVideo" autoplay playsinline></video>
-    </div>
-
-    <!-- Content Screen (Video 1 bittikten sonra) -->
-    <div class="content-screen" id="contentScreen">
-        <div class="animated-bg" id="animatedBg"></div>
-        
-        <!-- ÜST KISIM - YAZILAR -->
-        <div class="top-content">
-            <h1 class="main-title">ZAHİR & İSMAİL</h1>
-            <div class="designer-text">TASARLAYAN</div>
-            <div class="zahir-baba-text">ZAHİR BABA</div>
-            <h2 class="ismail-text">İSMAİL ASLAN</h2>
-            <p class="quote-text">DOSTUM</p>
-        </div>
-        
-        <!-- ALT KISIM - 2. VIDEO -->
-        <div class="bottom-content">
-            <div class="video2-container">
-                <video id="secondVideo" autoplay loop playsinline></video>
-            </div>
+        <!-- ZAHIR FUCKING ISO Overlay - Her zaman görünecek -->
+        <div class="video-overlay">
+            <div class="overlay-text">ZAHIR FUCKING ISO</div>
         </div>
     </div>
 
-    <!-- Progress Bar -->
+    <!-- Progress Bar (İsteğe bağlı, istersen burayı da silebilirsin) -->
     <div class="progress-container" id="progressContainer">
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
     <script>
-        // Variables
-        const PASSWORD = "zahirXiso";
-        let currentVideo = 1;
-        let particles = [];
-        let shakeInterval;
-
         // DOM Elements
-        const passwordScreen = document.getElementById('passwordScreen');
-        const passwordInput = document.getElementById('passwordInput');
-        const errorMessage = document.getElementById('errorMessage');
-        const videoContainer = document.getElementById('videoContainer');
         const mainVideo = document.getElementById('mainVideo');
-        const contentScreen = document.getElementById('contentScreen');
-        const secondVideo = document.getElementById('secondVideo');
-        const progressContainer = document.getElementById('progressContainer');
         const progressBar = document.getElementById('progressBar');
-        const animatedBg = document.getElementById('animatedBg');
+        const progressContainer = document.getElementById('progressContainer');
 
-        // Create particles for background
-        function createParticles() {
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                const size = Math.random() * 20 + 5;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100 + 100}%`;
-                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                animatedBg.appendChild(particle);
-                particles.push(particle);
-            }
-        }
-
-        // Check Password
-        function checkPassword() {
-            const enteredPassword = passwordInput.value;
+        // Video kaynağını ayarla ve oynat
+        function initVideo() {
+            // Video dosyasının adı - kendi video dosyanın adını buraya yaz
+            mainVideo.src = 'video1.mp4'; // Değiştir: video dosyanın adı
             
-            if (enteredPassword === PASSWORD) {
-                // Correct password
-                passwordScreen.style.opacity = '0';
-                setTimeout(() => {
-                    passwordScreen.style.display = 'none';
-                    startApp();
-                }, 500);
-            } else {
-                // Wrong password
-                passwordInput.value = '';
-                passwordInput.style.borderColor = '#ff4444';
-                passwordInput.style.boxShadow = '0 0 15px rgba(255, 68, 68, 0.3)';
-                errorMessage.style.display = 'block';
-                
-                // Shake effect
-                passwordInput.style.animation = 'shake 0.5s';
-                setTimeout(() => {
-                    passwordInput.style.animation = '';
-                }, 500);
-            }
-        }
-
-        // Exit App
-        function exitApp() {
-            passwordScreen.style.opacity = '0';
-            setTimeout(() => {
-                document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;color:#fff;font-size:24px;">Uygulama Kapatıldı</div>';
-            }, 500);
-        }
-
-        // Start Application
-        function startApp() {
-            createParticles();
-            playVideo1();
-        }
-
-        // Play Video 1 - SES AÇIK
-        function playVideo1() {
-            currentVideo = 1;
-            mainVideo.src = 'video1.mp4'; // Change to your video file
-            videoContainer.style.display = 'block';
-            progressContainer.style.display = 'block';
-            
-            // SESİ AÇ
+            // SESİ AÇ - MUTED KALDIRILDI
             mainVideo.muted = false;
             mainVideo.volume = 1.0;
             
-            mainVideo.play();
+            // Loop özelliğini kaldır (videonun bitmesini istiyorsan loop'u kaldır, sonsuz dönsün istiyorsan true yap)
+            mainVideo.loop = false; // false yaparsan video bitince durur, true yaparsan sürekli döner
             
-            // Update progress bar
+            // Otomatik oynatmayı dene
+            mainVideo.play().catch(e => {
+                console.log("Otomatik oynatma engellendi:", e);
+                // Otomatik oynatma engellenirse, kullanıcı herhangi bir yere tıklayınca oynat
+                document.addEventListener('click', function playOnClick() {
+                    mainVideo.play();
+                    document.removeEventListener('click', playOnClick);
+                }, { once: true });
+            });
+            
+            // Progress bar'ı güncelle
             mainVideo.ontimeupdate = function() {
-                const progress = (mainVideo.currentTime / mainVideo.duration) * 100;
-                progressBar.style.width = progress + '%';
+                if (mainVideo.duration) {
+                    const progress = (mainVideo.currentTime / mainVideo.duration) * 100;
+                    progressBar.style.width = progress + '%';
+                }
             };
             
-            // When video 1 ends
+            // Video bittiğinde ne yapılacağı
             mainVideo.onended = function() {
-                videoContainer.style.display = 'none';
-                progressContainer.style.display = 'none';
-                showContent();
+                console.log("Video bitti");
+                // İstersen buraya video bittiğinde yapılacak bir şey ekleyebilirsin
+                // Örneğin: mainVideo.currentTime = 0; mainVideo.play(); (başa sarıp tekrar oynat)
+                // Ama loop özelliğini true yaparsan zaten sürekli döner
             };
             
-            // Video error handling
-            mainVideo.onerror = function() {
-                // If video error, show content directly
-                showContent();
+            // Hata durumunda
+            mainVideo.onerror = function(e) {
+                console.error("Video yüklenirken hata oluştu:", e);
+                // Video yüklenemezse ekrana bir uyarı yazdırabilirsin
+                document.body.innerHTML += '<div style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:red; padding:20px; border-radius:10px; z-index:1000;">Video yüklenemedi! Dosya adını kontrol et: video1.mp4</div>';
             };
         }
 
-        // Show Content Screen (2. video HEMEN gelsin)
-        function showContent() {
-            contentScreen.style.display = 'flex';
-            
-            // HEMEN 2. videoyu başlat (beklemeden)
-            playVideo2();
-        }
-
-        // Play Video 2 with shake effect - SES AÇIK
-        function playVideo2() {
-            secondVideo.src = 'video2.mp4'; // Change to your video file
-            
-            // SESİ AÇ
-            secondVideo.muted = false;
-            secondVideo.volume = 1.0;
-            
-            secondVideo.loop = true;
-            secondVideo.play();
-            
-            // Hemen shake efektini başlat
-            startShakeEffect();
-        }
-
-        // Start shake effect for video 2
-        function startShakeEffect() {
-            const videoContainer = document.querySelector('.video2-container');
-            
-            // Her 2 saniyede bir shake efekti
-            shakeInterval = setInterval(() => {
-                videoContainer.classList.add('video-shake');
-                
-                // 0.3 saniye sonra shake'i kaldır
-                setTimeout(() => {
-                    videoContainer.classList.remove('video-shake');
-                }, 300);
-            }, 2000); // 2 saniyede bir
-        }
-
-        // Restart Application
-        function restartApp() {
-            // Clear shake interval
-            if (shakeInterval) {
-                clearInterval(shakeInterval);
-            }
-            
-            // Fade out everything
-            videoContainer.style.opacity = '0';
-            contentScreen.style.opacity = '0';
-            progressContainer.style.opacity = '0';
-            
-            setTimeout(() => {
-                // Reset everything
-                videoContainer.style.display = 'none';
-                contentScreen.style.display = 'none';
-                progressContainer.style.display = 'none';
-                
-                // Reset opacity
-                videoContainer.style.opacity = '1';
-                contentScreen.style.opacity = '1';
-                progressContainer.style.opacity = '1';
-                
-                // Clear particles
-                particles.forEach(p => p.remove());
-                particles = [];
-                
-                // Stop second video
-                secondVideo.pause();
-                secondVideo.src = '';
-                
-                // Restart
-                startApp();
-            }, 1000);
-        }
-
-        // Enter key for password input
-        passwordInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-        // Add shake animation for password input
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% {transform: translateX(0);}
-                10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
-                20%, 40%, 60%, 80% {transform: translateX(5px);}
-            }
-            
-            @keyframes videoShake {
-                0%, 100% { transform: translateX(0) rotate(0deg); }
-                25% { transform: translateX(-8px) rotate(-0.8deg); }
-                75% { transform: translateX(8px) rotate(0.8deg); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Initial focus on password input
+        // Sayfa yüklendiğinde videoyu başlat
         window.onload = function() {
-            passwordInput.focus();
+            initVideo();
         };
 
-        // Browser autoplay policy için
-        document.addEventListener('click', function() {
-            if (mainVideo.paused && videoContainer.style.display === 'block') {
-                mainVideo.play().catch(e => console.log("Autoplay prevented:", e));
+        // Tarayıcı otomatik oynatma politikaları için ekstra yardım
+        // Kullanıcı sayfaya tıkladığında videoyu oynatmayı dene (çalışmazsa)
+        document.body.addEventListener('click', function() {
+            if (mainVideo.paused) {
+                mainVideo.play().catch(e => console.log("Hala oynatılamıyor:", e));
             }
-            if (secondVideo.paused && contentScreen.style.display === 'flex') {
-                secondVideo.play().catch(e => console.log("Autoplay prevented:", e));
-            }
-        });
+        }, { once: true }); // Sadece bir kere çalışsın
     </script>
 </body>
 </html>
